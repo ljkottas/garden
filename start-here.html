@@ -1,176 +1,68 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Start using the GARDEN relational evangelism system without needing to be an expert or have answers on the spot." name="description"/>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Start using GARDEN with one person, one prayer, and one next step.">
 <title>Start Here — GARDEN</title>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+<style>
+:root{--navy:#102A43;--navy2:#173F60;--blue:#1565C0;--bright:#2D8CFF;--green:#2E7D55;--ice:#F1F7FC;--ink:#102A43;--muted:#526A7A;--line:#D6E3ED;--shadow:0 22px 60px rgba(16,42,67,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.62 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}a{color:inherit}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(16,42,67,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-weight:800;letter-spacing:.18em;display:flex;align-items:center;gap:10px}.brand-mark{width:16px;height:22px;border:2px solid var(--green);border-radius:100% 0 100% 0;transform:rotate(-35deg)}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:14px}.nav-links a{text-decoration:none;color:#3D5A6C}.nav-links a[aria-current]{font-weight:850;color:var(--navy)}.nav-cta{padding:9px 14px;border-radius:999px;background:var(--blue);color:#fff!important}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:850;color:var(--blue);margin-bottom:14px}.btn{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:800}.btn-primary{background:var(--blue);color:#fff}.btn-secondary{background:#fff;border:1px solid #9DB9CF}
+.hero{padding:76px 0 72px;background:radial-gradient(circle at 82% 18%,rgba(45,140,255,.18),transparent 28%),linear-gradient(180deg,#fff,#EEF7FF)}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.hero h1{font-size:clamp(52px,6vw,80px);letter-spacing:-.04em}.lede{font-size:20px;color:var(--muted);max-width:650px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.map{position:relative;padding:22px 0}.map:before{content:"";position:absolute;left:35px;top:55px;bottom:55px;width:4px;background:linear-gradient(var(--green),var(--bright),var(--navy));border-radius:4px}.map-step{position:relative;display:grid;grid-template-columns:74px 1fr;gap:18px;align-items:center;margin:0 0 18px}.map-step:last-child{margin-bottom:0}.map-dot{width:72px;height:72px;border-radius:50%;background:#fff;border:4px solid var(--blue);display:flex;align-items:center;justify-content:center;font:700 24px Georgia,serif;z-index:2}.map-step:first-child .map-dot{border-color:var(--green)}.map-step:last-child .map-dot{border-color:var(--navy)}
+.map-copy{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 20px;box-shadow:0 10px 25px rgba(16,42,67,.07)}.map-copy strong{font:700 20px Georgia,serif;display:block}.map-copy span{font-size:13px;color:var(--muted)}
+.start-band{background:linear-gradient(135deg,#102A43,#1565C0);color:#fff;padding:38px 0;border-top:4px solid var(--green)}.start-band .container{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:center}.start-band h2{font-size:36px}.start-band p{color:#DDEEFF;font-size:18px;margin:0}
+.section{padding:86px 0}.section.alt{background:var(--ice)}.section-head{max-width:790px;margin-bottom:40px}.section h2{font-size:clamp(34px,4vw,50px);letter-spacing:-.025em}.section-head p{font-size:18px;color:var(--muted)}
+.path{display:grid;gap:24px;position:relative}.path:before{content:"";position:absolute;left:50%;top:30px;bottom:30px;width:2px;background:#BDD5E5}
+.path-row{display:grid;grid-template-columns:1fr 86px 1fr;gap:26px;align-items:center;position:relative}.path-row:nth-child(even) .path-content{grid-column:3}.path-row:nth-child(even) .path-space{grid-column:1;grid-row:1}.path-marker{grid-column:2;width:66px;height:66px;border-radius:50%;margin:auto;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:700 23px Georgia,serif;z-index:2;box-shadow:0 0 0 8px #F1F7FC}.path-row:nth-child(1) .path-marker{background:var(--green)}.path-row:nth-child(4) .path-marker{background:var(--bright)}.path-row:nth-child(7) .path-marker{background:var(--navy)}
+.path-content{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 9px 25px rgba(16,42,67,.05)}.path-content small{text-transform:uppercase;letter-spacing:.11em;color:var(--blue);font-weight:900;font-size:10px}.path-content h3{font-size:27px;margin:7px 0 9px}.path-content p{color:var(--muted);margin:0 0 12px}.path-content a{font-weight:850;color:var(--blue);text-decoration:none}
+.week{display:grid;grid-template-columns:.7fr 1.3fr;gap:46px;align-items:start}.week-card{background:linear-gradient(145deg,#102A43,#173F60);color:#fff;border-radius:24px;padding:31px}.week-card h3{font-size:31px;margin-bottom:13px}.week-card p{color:#DCEAF3}.checklist{display:grid;gap:12px}.check{display:grid;grid-template-columns:45px 1fr;gap:14px;padding:17px 19px;border:1px solid var(--line);border-radius:15px;background:#fff}.check span{width:36px;height:36px;border-radius:50%;background:#DDEEFF;color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:900}.check strong{display:block}.check small{color:var(--muted);font-size:13px}
+.not-goal{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{border-radius:22px;padding:28px}.panel.no{background:#F5F7F8;border:1px solid #D8E0E5}.panel.yes{background:#E9F5EE;border:1px solid #BDDCC9}.panel h3{font-size:29px;margin-bottom:12px}.panel ul{padding-left:20px;color:#426174}.panel li{margin:8px 0}
+.final{padding:76px 0;text-align:center;background:linear-gradient(135deg,#102A43 0%,#1565C0 72%,#2D8CFF 140%);color:#fff;border-top:5px solid var(--green)}.final h2{font-size:48px}.final p{max-width:700px;margin:17px auto 26px;color:#E6F3FF}.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){.nav-links a:not([aria-current]):not(.nav-cta){display:none}.hero-grid,.start-band .container,.week,.not-goal{grid-template-columns:1fr}.path:before{left:32px}.path-row{grid-template-columns:66px 1fr}.path-marker{grid-column:1!important}.path-content,.path-row:nth-child(even) .path-content{grid-column:2}.path-space{display:none}}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="container nav">
-<a aria-label="GARDEN home" class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"></span><span class="brand-name">GARDEN</span></a>
-<button aria-controls="primary-nav" aria-expanded="false" class="menu-btn">Menu</button>
-<nav aria-label="Primary navigation" class="nav-links" id="primary-nav"><a href="index.html">Home</a><a aria-current="page" href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a></nav>
-</div>
-</header>
-<main id="main">
-<section class="start-hero">
-<div class="container start-hero-grid">
-<div>
-<div class="eyebrow">Start exactly where you are</div>
-<h1>You don’t need to be ready. You just need to begin.</h1>
-<p class="lede">You do not need deep apologetics knowledge, quick answers, or confidence in difficult conversations to engage someone thoughtfully about faith. GARDEN gives you a low-pressure way to start with the people already in your life.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#first-step">Show me how →</a>
-<a class="btn btn-secondary" href="garden.html">See the full GARDEN framework</a>
-</div>
-</div>
-<aside class="reassurance-card">
-<div class="tool-kicker">Permission to begin</div>
-<h2>You can say, “I don’t know.”</h2>
-<p>If someone asks a difficult question, you are allowed to think about it later.</p>
-<blockquote>“That’s a good question. I’m not sure how I would answer that right now. Let me think about it and get back to you.”</blockquote>
-<p class="small-note">That is not a failed conversation. It can be the beginning of a better one.</p>
-</aside>
-</div>
-</section>
-<section class="section alt">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Take the pressure off</div>
-<h2>Evangelism does not require an answer on the spot.</h2>
-<p>A lot of Christians stay silent because they imagine every spiritual conversation as a test: someone raises an objection, and they have a few seconds to produce the right answer. GARDEN starts from a different assumption. You can listen now and do the hard thinking later.</p>
-</div>
-<div class="problem-grid">
-<article class="card"><div class="card-num">You don’t need</div><h3>Expert knowledge</h3><p>You can use trusted Christian thinkers, curated resources, and guided AI frameworks to help you learn after a question comes up.</p></article>
-<article class="card"><div class="card-num">You don’t need</div><h3>Natural confidence</h3><p>You can begin by listening. As your comfort grows, thoughtful questions can become your next conversational tool.</p></article>
-<article class="card"><div class="card-num">You don’t need</div><h3>A perfect conversation</h3><p>The goal is not to close the discussion in one sitting. Plant something worth thinking about and remain available for the next conversation.</p></article>
-</div>
-</div>
-</section>
-<section class="section" id="first-step">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">The simplest way to start</div>
-<h2>Listen now. Prepare later. Follow up.</h2>
-<p>If you have no knowledge and no comfort, this is enough. You can practice the long game without pretending to be further along than you are.</p>
-</div>
-<div class="start-path">
-<article class="path-card"><span class="path-num">01</span><h3>Listen</h3><p>Pay attention to the claim, question, experience, or objection. Your first job is understanding—not responding.</p></article>
-<div aria-hidden="true" class="path-arrow">→</div>
-<article class="path-card"><span class="path-num">02</span><h3>Reflect &amp; Research</h3><p>When the pressure is off, work through what was said. Learn the issue, ask better questions, and find a trustworthy response.</p></article>
-<div aria-hidden="true" class="path-arrow">→</div>
-<article class="path-card"><span class="path-num">03</span><h3>Follow Up</h3><p>Return naturally: “I was thinking about what you said the other day…” Then share an idea, question, or helpful resource.</p></article>
-</div>
-</div>
-</section>
-<section class="quote-band">
-<div class="container">
-<blockquote>The pressure is not on you to produce a conversion. Your role is to be faithful with the next opportunity.</blockquote>
-<p>Think like a gardener: cultivate, plant, water, pray—and trust God with the growth.</p>
-</div>
-</section>
-<section class="section">
-<div class="container scenario">
-<div>
-<div class="eyebrow">What this looks like</div>
-<h2>A real conversation can be this simple.</h2>
-<p class="lede">You hear an objection you cannot answer. Instead of panicking or avoiding the subject, you remember it and come back prepared.</p>
-<div class="checks">
-<div class="check"><i>✓</i><div><strong>You listened.</strong><br/>You learned something important about what the other person believes.</div></div>
-<div class="check"><i>✓</i><div><strong>You prepared without pressure.</strong><br/>You had time to think, research, and find a useful resource.</div></div>
-<div class="check"><i>✓</i><div><strong>You created another conversation.</strong><br/>The first exchange did not need to do everything.</div></div>
-</div>
-</div>
-<div class="scenario-box">
-<div class="chat">
-<div class="bubble them"><strong>Friend:</strong> “If God is good, why does He allow children to suffer?”</div>
-<div class="bubble you"><strong>You:</strong> “That’s a really good question. I’m not sure how I’d answer that right now. Let me think about it.”</div>
-<div class="bubble them"><em>Later, with no conversational pressure, you study the problem of suffering and find a helpful discussion from a trusted Christian thinker.</em></div>
-<div class="bubble you"><strong>You, later:</strong> “I’ve been thinking about your question about suffering. I came across a discussion that helped me think about it differently. I’d be curious what you think.”</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section alt">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Grow at your own pace</div>
-<h2>Your conversations can develop as you do.</h2>
-<p>You do not have to jump from silence to expert-level apologetics. The Conversational Models show three common stages of preparedness and what faithful engagement can look like at each one.</p>
-</div>
-<div class="stage-grid">
-<article class="stage-card"><div class="stage-badge">Stage 1</div><h3>No knowledge. No comfort.</h3><p>Listen carefully. If asked a question, admit you do not know. Reflect, research, and follow up later.</p><strong class="stage-line">“Let me think about that and get back to you.”</strong></article>
-<article class="stage-card"><div class="stage-badge">Stage 2</div><h3>Growing comfort and curiosity.</h3><p>Begin using questions to clarify claims, expose assumptions, test reasoning, and keep the burden on the person making the claim.</p><strong class="stage-line">“What do you mean by that?”</strong></article>
-<article class="stage-card"><div class="stage-badge">Stage 3</div><h3>Knowledge and confidence together.</h3><p>Combine strategic questions with thoughtful explanations, corrections, and worldview analysis as the conversation requires.</p><strong class="stage-line">Ask well. Answer when useful.</strong></article>
-</div>
-<p class="center-action"><a class="btn btn-primary" href="conversations.html">Explore Conversational Models →</a></p>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Your first mission field</div>
-<h2>Start with one person you already care about.</h2>
-<p>You do not need to approach strangers or manufacture spiritual encounters. Think about a friend, relative, coworker, neighbor, or someone else already in your life who does not believe.</p>
-</div>
-<div class="first-person-grid">
-<div class="card soft first-person-card">
-<div class="card-num">Try this today</div>
-<h3>Choose one person.</h3>
-<p>Write down their name. Think about what you know about their story and beliefs. Remember any spiritual conversations you have already had. Then begin praying for them intentionally.</p>
-</div>
-<div class="card first-person-card">
-<div class="card-num">Keep it simple</div>
-<h3>Ask one question.</h3>
-<p>You might ask something as natural as, “What do you think happens when we die?” A good question can reveal a worldview, open a deeper discussion, and show you what you may want to prepare for later.</p>
-</div>
-</div>
-<div class="hero-actions">
-<a class="btn btn-primary" href="people.html">Meet the Evangelism Profile Tool →</a>
-<a class="btn btn-secondary" href="conversations.html">See conversation starters</a>
-</div>
-</div>
-</section>
-<section class="section alt">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">How the toolkit helps</div>
-<h2>You are not expected to figure everything out yourself.</h2>
-<p>Each tool supports a different part of the same long-game process. Use what you need when you need it.</p>
-</div>
-<div class="tool-grid start-tools">
-<article class="card tool-card"><div class="tool-kicker">The system</div><h3>GARDEN Framework</h3><p>Learn the overall rhythm of relational, intentional evangelism.</p><a href="garden.html">Learn GARDEN →</a></article>
-<article class="card tool-card"><div class="tool-kicker">The people</div><h3>Evangelism Profile Tool</h3><p>Remember what matters, pray specifically, and identify a natural next step.</p><a href="people.html">Start with your people →</a></article>
-<article class="card tool-card"><div class="tool-kicker">The conversations</div><h3>Conversational Models</h3><p>Learn how to start conversations and engage them at your current level of preparedness.</p><a href="conversations.html">See the models →</a></article>
-<article class="card tool-card"><div class="tool-kicker">The content</div><h3>Trusted Voices</h3><p>Discover trusted ministries, scholars, apologists, theologians, and thinkers worth learning from.</p><a href="resources.html">Meet trusted voices →</a></article>
-<article class="card tool-card"><div class="tool-kicker">The library</div><h3>Research Library</h3><p>Search specific questions, objections, and topics to find curated articles, videos, podcasts, and books for learning or sharing.</p><a href="research.html">Search the library →</a></article>
-        <article class="card tool-card"><div class="tool-kicker">AI-assisted preparation</div><h3>External Engagement Framework</h3><p>Safely use AI to explore objections, worldviews, and questions raised by non-believers.</p><a href="external-framework.html">Prepare with AI →</a></article>
-<article class="card tool-card"><div class="tool-kicker">AI-assisted formation</div><h3>Internal Christian Dialogue Framework</h3><p>Use AI within biblical and orthodox guardrails to study doctrine and Christian disagreements.</p><a href="internal-framework.html">Study with AI →</a></article>
-</div>
-</div>
-</section>
-<section class="final-cta">
-<div class="container">
-<div class="box">
-<div class="eyebrow" style="color:#e7c899; justify-content:center;">Your first step</div>
-<h2>Think of one person. Pray for them. Pay attention.</h2>
-<p>You do not need a speech or a strategy for every possible objection. Begin with one relationship and be ready for the next small opportunity.</p>
-<a class="btn btn-secondary" href="people.html">Start with your people →</a>
-</div>
-</div>
-</section>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a><nav class="nav-links"><a href="index.html">Home</a><a aria-current="page" href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="#path">Begin</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><div class="eyebrow">Your first steps</div><h1>Start small. Start with someone you already know.</h1><p class="lede">GARDEN is not asking you to become an expert before you begin. It is asking you to become intentional: one person, one prayer, one conversation, one thoughtful next step.</p><div class="hero-actions"><a class="btn btn-primary" href="#path">Walk the path ↓</a><a class="btn btn-secondary" href="garden.html">Learn the framework</a></div></div>
+<div class="map"><div class="map-step"><div class="map-dot">1</div><div class="map-copy"><strong>Choose one person.</strong><span>Someone already present in your life.</span></div></div><div class="map-step"><div class="map-dot">2</div><div class="map-copy"><strong>Begin praying.</strong><span>For the person, not merely the conversation.</span></div></div><div class="map-step"><div class="map-dot">3</div><div class="map-copy"><strong>Pay attention.</strong><span>Listen for beliefs, questions, experiences, and openings.</span></div></div><div class="map-step"><div class="map-dot">4</div><div class="map-copy"><strong>Take one next step.</strong><span>A question, follow-up, resource, or another conversation.</span></div></div></div>
+</div></section>
+
+<section class="start-band"><div class="container"><h2>You do not need to have an evangelism “event.”</h2><p>The mission field is already woven into ordinary life—family, work, neighborhoods, hobbies, friendships, school activities, and the people you see repeatedly. GARDEN begins there.</p></div></section>
+
+<section class="section alt" id="path"><div class="container"><div class="section-head"><div class="eyebrow">A guided path through the toolkit</div><h2>Seven tools. You do not need all seven at once.</h2><p>Move through them as needs arise. The point is not to complete a website. The point is to become more intentional, prepared, and faithful with real people.</p></div>
+<div class="path">
+<div class="path-row"><div class="path-content"><small>Tool 01</small><h3>GARDEN Framework</h3><p>Learn the six habits that hold the entire approach together: relationships, questions, research, resources, ongoing engagement, and prayer.</p><a href="garden.html">Learn GARDEN →</a></div><div class="path-marker">G</div><div class="path-space"></div></div>
+<div class="path-row"><div class="path-space"></div><div class="path-marker">1</div><div class="path-content"><small>Tool 02</small><h3>Your People</h3><p>Choose someone you already care about. Remember what matters to them, what they believe, what conversations have happened, and what a natural next step might be.</p><a href="people.html">Build a profile →</a></div></div>
+<div class="path-row"><div class="path-content"><small>Tool 03</small><h3>Conversational Models</h3><p>Learn how to begin spiritual conversations, ask better questions, and engage honestly even when you do not know the answer.</p><a href="conversations.html">See conversation models →</a></div><div class="path-marker">2</div><div class="path-space"></div></div>
+<div class="path-row"><div class="path-space"></div><div class="path-marker">3</div><div class="path-content"><small>Tool 04</small><h3>Trusted Voices</h3><p>Find reliable Christian thinkers and ministries who can help you understand the subject more deeply.</p><a href="resources.html">Meet trusted voices →</a></div></div>
+<div class="path-row"><div class="path-content"><small>Tool 05</small><h3>Research Library</h3><p>Search by the actual question or objection that came up and find articles, videos, podcasts, and books worth considering.</p><a href="research.html">Search the library →</a></div><div class="path-marker">4</div><div class="path-space"></div></div>
+<div class="path-row"><div class="path-space"></div><div class="path-marker">5</div><div class="path-content"><small>Tool 06</small><h3>External Engagement Framework</h3><p>Use structured AI assistance to steelman objections, identify worldview assumptions, compare explanations, and prepare a thoughtful response to a non-believer.</p><a href="external-framework.html">Open external framework →</a></div></div>
+<div class="path-row"><div class="path-content"><small>Tool 07</small><h3>Internal Christian Dialogue</h3><p>For disagreements among Christians, reason from Scripture first, map legitimate positions fairly, and distinguish settled doctrine from bounded disagreement.</p><a href="internal-framework.html">Open internal framework →</a></div><div class="path-marker">6</div><div class="path-space"></div></div>
+</div></div></section>
+
+<section class="section"><div class="container week"><div class="week-card"><div class="eyebrow" style="color:#9DD0FF">Try this this week</div><h3>A simple first-week plan.</h3><p>No curriculum. No giant reading list. Just begin paying closer attention to one person and one relationship.</p></div><div class="checklist">
+<div class="check"><span>1</span><div><strong>Write down one name.</strong><small>Choose someone you genuinely know and care about.</small></div></div>
+<div class="check"><span>2</span><div><strong>Pray for them each day.</strong><small>Pray for their life, needs, relationships, questions, and openness to God.</small></div></div>
+<div class="check"><span>3</span><div><strong>Listen differently.</strong><small>Notice what they say about meaning, morality, suffering, God, religion, truth, and their own story.</small></div></div>
+<div class="check"><span>4</span><div><strong>Do not force anything.</strong><small>If a natural opening appears, ask a thoughtful question. If it does not, keep building the relationship.</small></div></div>
+<div class="check"><span>5</span><div><strong>Capture the next step.</strong><small>Afterward, record what you learned and decide whether there is something worth researching or revisiting.</small></div></div>
+</div></div></section>
+
+<section class="section alt"><div class="container"><div class="section-head"><div class="eyebrow">Keep the goal clear</div><h2>This is not about becoming an evangelism machine.</h2></div><div class="not-goal">
+<div class="panel no"><h3>GARDEN is not…</h3><ul><li>Turning people into projects.</li><li>Forcing spiritual conversations.</li><li>Having an answer for everything.</li><li>Winning arguments.</li><li>Trying to manufacture conversion.</li></ul></div>
+<div class="panel yes"><h3>GARDEN is…</h3><ul><li>Caring about people intentionally.</li><li>Being prepared when opportunities arise.</li><li>Asking thoughtful questions.</li><li>Growing in your ability to give an answer.</li><li>Trusting God with what you cannot control.</li></ul></div>
+</div></div></section>
+
+<section class="final"><div class="container"><div class="eyebrow" style="color:#A9D5FF">Begin here</div><h2>Who is one person you can start praying for today?</h2><p>You do not need a perfect strategy. Put one name in front of you, begin praying, and start paying attention.</p><a class="btn btn-secondary" href="people.html">Go to Your People →</a></div></section>
 </main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div><strong>GARDEN</strong><p>A practical toolkit for thoughtful, relational, long-game evangelism.</p></div>
-<div class="footer-links"><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a></div>
-</div>
-</footer>
-</body>
-</html>
+<footer class="footer"><div class="container"><strong>GARDEN</strong><span>Thoughtful, relational evangelism for the long game.</span></div></footer>
+</body></html>

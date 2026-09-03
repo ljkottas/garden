@@ -1,177 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Internal Christian Dialogue Framework | GARDEN</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Internal Christian Dialogue Framework — GARDEN</title>
 <style>
-:root{--ink:#243229;--muted:#647067;--cream:#f7f4ec;--paper:#fffdf8;--green:#365b43;--green2:#56745f;--line:#dcd8cd;--soft:#edf1e8}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
-a{color:inherit}
-header{background:#fffdf8f5;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;gap:24px;align-items:center}
-.brand{font-family:Georgia,serif;font-weight:bold;letter-spacing:.08em;color:var(--green);text-decoration:none}
-nav{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap;justify-content:flex-end}
-nav a{text-decoration:none;font-size:.86rem;color:#48544c}
-nav a.active,nav a:hover{color:var(--green);text-decoration:underline;text-underline-offset:5px}
-.hero{background:linear-gradient(135deg,#edf1e8,#f7f4ec);border-bottom:1px solid var(--line)}
-.hero-inner,main,.footer-inner{max-width:1040px;margin:auto}
-.hero-inner{padding:80px 24px 70px}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:bold;color:var(--green2)}
-h1,h2,h3{font-family:Georgia,serif;line-height:1.16}
-h1{font-size:clamp(2.5rem,6vw,4.8rem);margin:.25em 0}
-.hero p{font-size:1.2rem;max-width:800px;color:#4d5a51}
-main{padding:64px 24px}
-section{margin-bottom:68px}
-h2{font-size:2rem}
-.lead{font-size:1.15rem;max-width:850px}
-.callout{border-left:4px solid var(--green);background:var(--paper);padding:22px 25px;margin:28px 0;border-radius:0 10px 10px 0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{margin-top:0}
-.tier{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:16px}
-.tier strong{color:var(--green)}
-.step{display:grid;grid-template-columns:58px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
-.num{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#e7ede5;color:var(--green);font-weight:bold}
-.step h3{margin:2px 0 6px}.step p{margin:0;color:#566159}
-.example{background:var(--soft);border-radius:14px;padding:26px}
-.quote{font-family:Georgia,serif;font-size:1.4rem;text-align:center;max-width:800px;margin:38px auto}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.btn{padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:bold;background:var(--green);color:#fff}
-.btn.secondary{background:transparent;color:var(--green);border:1px solid var(--green)}
-footer{border-top:1px solid var(--line);background:var(--paper);padding:34px 24px}
-.small{font-size:.9rem;color:var(--muted)}
-@media(max-width:760px){.nav{flex-direction:column;align-items:flex-start}.nav nav{margin-left:0}.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<header><div class="nav"><a class="brand" href="index.html">GARDEN</a><nav><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a class="active" href="frameworks.html">AI Frameworks</a><a href="about.html">About</a></nav></div></header>
-
-<div class="hero"><div class="hero-inner">
-<div class="eyebrow">AI Frameworks · Internal Christian Dialogue</div>
-<h1>Internal Christian Dialogue Framework</h1>
-<p>A structured framework for helping believers use AI to study theology, interpret Scripture carefully, understand legitimate doctrinal differences, and engage other Christians with clarity, humility, and love.</p>
-</div></div>
-
+:root{--navy:#102A43;--navy2:#173F60;--blue:#1565C0;--bright:#2D8CFF;--green:#2E7D55;--ice:#F1F7FC;--muted:#526A7A;--line:#D6E3ED;--accent:#2E7D55}
+*{box-sizing:border-box}body{margin:0;color:var(--navy);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.1}a{color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;font-weight:850;letter-spacing:.18em}.links{display:flex;gap:16px;font-size:13px;align-items:center}.links a{text-decoration:none;color:#466173}.links .active{font-weight:900;color:var(--navy)}
+.hero{padding:70px 0;background:linear-gradient(135deg,#102A43,#173F60);color:#fff;border-bottom:5px solid var(--accent)}.hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:900;color:#A9D5FF}h1{font-size:clamp(48px,6vw,74px);margin:10px 0 18px;letter-spacing:-.04em}.hero p{font-size:19px;color:#DDEEFF}.mode{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:28px}.mode strong{display:block;font:700 28px Georgia,serif;margin-bottom:10px}.mode span{color:#DDEEFF}
+.layout{display:grid;grid-template-columns:260px minmax(0,720px);gap:55px;padding:72px 0;justify-content:center}aside{align-self:start;position:sticky;top:105px}.rail{border-left:4px solid var(--accent);padding-left:18px}.rail strong{font-family:Georgia,serif;font-size:22px;display:block}.rail p{font-size:13px;color:var(--muted)}.rail a{display:inline-block;margin-top:10px;text-decoration:none;color:var(--blue);font-weight:850}
+.content{min-width:0}.content h3{font-size:28px;margin:38px 0 12px;padding-top:25px;border-top:1px solid var(--line)}.content h3:first-child{margin-top:0;border-top:0;padding-top:0}.content p{color:#365568;margin:0 0 17px}.prompt{margin:24px 0;padding:18px 20px;background:var(--ice);border-left:4px solid var(--accent);font-weight:800;color:#23485E;border-radius:0 12px 12px 0}
+.guard{background:#0A2033;color:#fff;padding:42px 0;border-top:4px solid var(--accent)}.guard .container{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:center}.guard h2{font-size:36px}.guard p{color:#DDEEFF}.footer{padding:30px 0;background:#071A2A;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between}
+@media(max-width:850px){.links a:not(.active){display:none}.hero-grid,.layout,.guard .container{grid-template-columns:1fr}aside{position:static}}
+</style></head><body>
+<header><div class="container"><nav><a class="brand" href="index.html">GARDEN</a><div class="links"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a class="active" href="frameworks.html">AI Frameworks</a><a href="about.html">About</a></div></nav></div></header>
 <main>
-<section>
-<h2>Why This Tool Exists</h2>
-<p class="lead">Artificial intelligence makes it easy to ask complex theological questions. But not every Christian disagreement is the same, and not every answer should be treated as equally authoritative.</p>
+<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Believer ↔ believer</div><h1>Internal Christian Dialogue Framework</h1><p>A structured way to use AI while thinking through disagreements among Christians without flattening real theological differences.</p></div><div class="mode"><strong>Believer ↔ Believer</strong><span>Reason carefully about Christian disagreement with Scripture and orthodoxy kept in view.</span></div></div></section>
+<div class="container layout"><aside><div class="rail"><strong>Working framework</strong><p>This page preserves the framework's existing content while giving it the redesigned GARDEN visual system.</p><a href="internal-christian-dialogue-framework.pdf">Open the PDF →</a><br><a href="frameworks.html">← AI Frameworks</a></div></aside><article class="content"><h3>Why This Tool Exists</h3>
+<p>Artificial intelligence makes it easy to ask complex theological questions. But not every Christian disagreement is the same, and not every answer should be treated as equally authoritative.</p>
 <p>Questions about baptism, predestination, spiritual gifts, eschatology, church government, or biblical interpretation often involve centuries of serious Christian disagreement. At the same time, some doctrines are not open questions at all. They belong to the settled core of historic Christian orthodoxy.</p>
 <p>The Internal Christian Dialogue Framework helps believers use AI without flattening those distinctions.</p>
-<div class="callout"><strong>The goal is not to produce a better arguer.</strong> The goal is to help form a more faithful, thoughtful, biblically grounded, and relationally present believer.</div>
-</section>
-
-<section>
-<h2>AI as a Study Assistant, Not a Theological Authority</h2>
+<p>The goal is not to produce a better arguer. The goal is to help form a more faithful, thoughtful, biblically grounded, and relationally present believer.</p>
+<h3>AI as a Study Assistant, Not a Theological Authority</h3>
 <p>The framework does not treat AI as a replacement for Scripture, the local church, pastoral counsel, or mature Christian wisdom. Instead, AI functions as a guided study partner.</p>
-<div class="grid">
-<div class="card"><h3>Study Scripture More Carefully</h3><p>Begin with the biblical text in context before moving to theological or philosophical conclusions.</p></div>
-<div class="card"><h3>Understand Real Disagreements</h3><p>Map competing positions accurately, fairly, and without caricature.</p></div>
-<div class="card"><h3>Distinguish Levels of Doctrine</h3><p>Recognize the difference between settled orthodoxy, contested secondary doctrine, and genuinely open questions.</p></div>
-<div class="card"><h3>Preserve Christian Unity</h3><p>Pursue truth without treating every disagreement as a reason for division.</p></div>
-</div>
-</section>
-
-<section>
-<h2>The Three-Tier Theological Boundary</h2>
+<h3>Study Scripture More Carefully</h3>
+<p>Begin with the biblical text in context before moving to theological or philosophical conclusions.</p>
+<h3>Understand Real Disagreements</h3>
+<p>Map competing positions accurately, fairly, and without caricature.</p>
+<h3>Distinguish Levels of Doctrine</h3>
+<p>Recognize the difference between settled orthodoxy, contested secondary doctrine, and genuinely open questions.</p>
+<h3>Preserve Christian Unity</h3>
+<p>Pursue truth without treating every disagreement as a reason for division.</p>
+<h3>The Three-Tier Theological Boundary</h3>
 <p>One of the most distinctive parts of the framework is that it requires the AI to classify the issue before proceeding.</p>
-
-<div class="tier">
 <h3>Tier 1 — Settled Orthodoxy</h3>
-<p><strong>Non-negotiable doctrines of historic Christianity.</strong> These include doctrines defined by the ecumenical creeds, such as the Trinity, the full humanity and divinity of Christ, the bodily resurrection, and salvation through Christ. Departures from these boundaries are not treated as merely another legitimate Christian option.</p>
-</div>
-
-<div class="tier">
+<p>Non-negotiable doctrines of historic Christianity. These include doctrines defined by the ecumenical creeds, such as the Trinity, the full humanity and divinity of Christ, the bodily resurrection, and salvation through Christ. Departures from these boundaries are not treated as merely another legitimate Christian option.</p>
 <h3>Tier 2 — Contested but Bounded</h3>
-<p><strong>Doctrines on which serious, exegetically responsible Christians have disagreed while remaining within orthodoxy.</strong> Examples include Calvinism and Arminianism, cessationism and continuationism, infant and believer's baptism, covenantal and dispensational theology, and differing millennial views.</p>
-</div>
-
-<div class="tier">
+<p>Doctrines on which serious, exegetically responsible Christians have disagreed while remaining within orthodoxy. Examples include Calvinism and Arminianism, cessationism and continuationism, infant and believer&#x27;s baptism, covenantal and dispensational theology, and differing millennial views.</p>
 <h3>Tier 3 — Genuinely Open</h3>
-<p><strong>Questions where Scripture does not speak with enough specificity to require a single position.</strong> The framework encourages humility while still allowing stronger and weaker arguments to be identified.</p>
-</div>
-
+<p>Questions where Scripture does not speak with enough specificity to require a single position. The framework encourages humility while still allowing stronger and weaker arguments to be identified.</p>
 <p>If someone treats a Tier 1 doctrine as if it were optional—or elevates a Tier 3 question to the level of orthodoxy—the framework is designed to identify that confusion before the discussion continues.</p>
-</section>
-
-<section>
-<h2>Scripture First</h2>
-<p>The framework establishes a clear order of reasoning:</p>
-<div class="quote">Exegetically first. Theologically second. Philosophically third.</div>
+<h3>Scripture First</h3>
+<div class="prompt">The framework establishes a clear order of reasoning:</div>
+<p>Exegetically first. Theologically second. Philosophically third.</p>
 <p>The biblical text is not meant to be added at the end merely to support a conclusion already reached. Relevant passages are to be woven naturally into the reasoning, read in context, and allowed to shape the conclusion.</p>
-<p>The framework also tells the AI to identify when two Christians may actually be disagreeing at different levels:</p>
-<ul>
-<li><strong>Exegetical:</strong> What does this particular text mean?</li>
-<li><strong>Theological:</strong> How does this doctrine fit with the whole of Scripture?</li>
-<li><strong>Philosophical:</strong> What does this imply about God, humanity, freedom, or reality?</li>
-</ul>
+<div class="prompt">The framework also tells the AI to identify when two Christians may actually be disagreeing at different levels:</div>
+<div class="prompt">Exegetical: What does this particular text mean?</div>
+<div class="prompt">Theological: How does this doctrine fit with the whole of Scripture?</div>
+<div class="prompt">Philosophical: What does this imply about God, humanity, freedom, or reality?</div>
 <p>Recognizing the level of disagreement often helps people stop talking past one another.</p>
-</section>
-
-<section>
-<h2>The Thinking Framework</h2>
-<div class="step"><div class="num">1</div><div><h3>Clarify and Classify</h3><p>Name the issue precisely, define important terms, and assign the question to Tier 1, 2, or 3.</p></div></div>
-<div class="step"><div class="num">2</div><div><h3>Establish Shared Ground</h3><p>Identify common biblical and creedal commitments before focusing on the disagreement.</p></div></div>
-<div class="step"><div class="num">3</div><div><h3>Map the Positions</h3><p>Present each view at its strongest, including major biblical texts, traditions, theologians, and internal logic.</p></div></div>
-<div class="step"><div class="num">4</div><div><h3>Locate the Genuine Disagreement</h3><p>Identify exactly where the positions diverge—exegetically, theologically, or philosophically.</p></div></div>
-<div class="step"><div class="num">5</div><div><h3>Apply Hermeneutical Analysis</h3><p>Examine the interpretive assumptions each side brings to Scripture.</p></div></div>
-<div class="step"><div class="num">6</div><div><h3>Provide Historical Context</h3><p>Situate the debate within church history, councils, confessions, traditions, and major theologians.</p></div></div>
-<div class="step"><div class="num">7</div><div><h3>Assess Against Orthodoxy</h3><p>Determine whether either position crosses historic Christian boundaries or remains a legitimate secondary disagreement.</p></div></div>
-<div class="step"><div class="num">8</div><div><h3>Identify Practical Implications</h3><p>Explore what the doctrine means for worship, church practice, ethics, and Christian community.</p></div></div>
-<div class="step"><div class="num">9</div><div><h3>Clarify What Remains Open</h3><p>Identify what remains unresolved and what passage, resource, or real conversation should come next.</p></div></div>
-</section>
-
-<section>
-<h2>Truth Without False Harmony</h2>
+<h3>The Thinking Framework</h3>
+<h3>1</h3>
+<h3>Clarify and Classify</h3>
+<p>Name the issue precisely, define important terms, and assign the question to Tier 1, 2, or 3.</p>
+<h3>2</h3>
+<h3>Establish Shared Ground</h3>
+<p>Identify common biblical and creedal commitments before focusing on the disagreement.</p>
+<h3>3</h3>
+<h3>Map the Positions</h3>
+<p>Present each view at its strongest, including major biblical texts, traditions, theologians, and internal logic.</p>
+<h3>4</h3>
+<h3>Locate the Genuine Disagreement</h3>
+<p>Identify exactly where the positions diverge—exegetically, theologically, or philosophically.</p>
+<h3>5</h3>
+<h3>Apply Hermeneutical Analysis</h3>
+<p>Examine the interpretive assumptions each side brings to Scripture.</p>
+<h3>6</h3>
+<h3>Provide Historical Context</h3>
+<p>Situate the debate within church history, councils, confessions, traditions, and major theologians.</p>
+<h3>7</h3>
+<h3>Assess Against Orthodoxy</h3>
+<p>Determine whether either position crosses historic Christian boundaries or remains a legitimate secondary disagreement.</p>
+<h3>8</h3>
+<h3>Identify Practical Implications</h3>
+<p>Explore what the doctrine means for worship, church practice, ethics, and Christian community.</p>
+<h3>9</h3>
+<h3>Clarify What Remains Open</h3>
+<p>Identify what remains unresolved and what passage, resource, or real conversation should come next.</p>
+<h3>Truth Without False Harmony</h3>
 <p>Charity does not require pretending that mutually exclusive positions can both be true in the same sense at the same time.</p>
 <p>The framework is designed to represent each side fairly, but it also explicitly instructs the AI to name genuine contradictions and real doctrinal differences when they exist.</p>
-<div class="callout"><strong>Faithful disagreement is neither caricature nor artificial harmony.</strong> It is careful representation, honest evaluation, and humility about what Scripture does and does not clearly require.</div>
-</section>
-
-<section>
-<h2>The Person Matters Too</h2>
+<p>Faithful disagreement is neither caricature nor artificial harmony. It is careful representation, honest evaluation, and humility about what Scripture does and does not clearly require.</p>
+<h3>The Person Matters Too</h3>
 <p>Theological disagreement is rarely purely intellectual. People often hold positions within communities, traditions, and personal histories that have deeply shaped them.</p>
 <p>The framework therefore redirects attention from the abstract issue back to the person: what they understand, what they are concerned about, what they need clarified, and how the conversation can move forward faithfully.</p>
 <p>For a newer believer, the goal may be formation rather than simply arriving at a conclusion. For two mature believers, the framework may press both parties back toward the biblical text and the precise point of disagreement.</p>
-</section>
-
-<section>
-<h2>Example</h2>
-<div class="example">
+<h3>Example</h3>
 <h3>“Can a Christian lose salvation?”</h3>
 <p>Rather than immediately choosing a side, the framework would first clarify the question and classify it appropriately. It would establish shared Christian commitments, identify the relevant texts, map the strongest orthodox positions, distinguish exegetical from theological disagreements, provide historical context, and identify where the views truly diverge.</p>
 <p>It would then help the user understand what is actually at stake without treating another orthodox believer as an enemy—and without pretending the disagreement is meaningless.</p>
-</div>
-</section>
-
-<section>
-<h2>How to Use the Master Framework</h2>
-<ol>
-<li>Start a new conversation with the AI tool you use.</li>
-<li>Attach or provide the Internal Christian Dialogue Framework master prompt.</li>
-<li>The framework will first ask whether you are studying alone or working through a real conversation with another believer.</li>
-<li>Enter the doctrine, passage, disagreement, or theological question you want to explore.</li>
-<li>Use the response as a guide for study rather than as a final authority.</li>
-<li>Check Scripture carefully and engage trusted pastors, teachers, confessions, commentaries, and historical sources.</li>
-<li>Whenever possible, bring the learning back into a real Christian relationship or church context.</li>
-</ol>
-<div class="actions">
-<a class="btn" href="internal-christian-dialogue-framework.pdf">Download Internal Framework</a>
-<a class="btn secondary" href="resources.html">Explore Trusted Voices</a>
-<a class="btn secondary" href="external-framework.html">External Engagement Framework</a>
-</div>
-</section>
-
-<section>
-<h2>The Big Idea</h2>
-<p class="lead">Christians need both conviction and charity.</p>
+<h3>How to Use the Master Framework</h3>
+<p>Start a new conversation with the AI tool you use.</p>
+<p>Attach or provide the Internal Christian Dialogue Framework master prompt.</p>
+<p>The framework will first ask whether you are studying alone or working through a real conversation with another believer.</p>
+<p>Enter the doctrine, passage, disagreement, or theological question you want to explore.</p>
+<p>Use the response as a guide for study rather than as a final authority.</p>
+<p>Check Scripture carefully and engage trusted pastors, teachers, confessions, commentaries, and historical sources.</p>
+<p>Whenever possible, bring the learning back into a real Christian relationship or church context.</p>
+<h3>Download Internal Framework</h3>
+<h3>Explore Trusted Voices</h3>
+<h3>External Engagement Framework</h3>
+<h3>The Big Idea</h3>
+<p>Christians need both conviction and charity.</p>
 <p>The Internal Christian Dialogue Framework helps believers use AI to pursue theological clarity without losing sight of Scripture, orthodoxy, church history, humility, and Christian unity.</p>
-<p>It is designed not merely to help Christians decide what they think, but to help them become better readers of Scripture, better conversation partners, and more faithful members of the body of Christ.</p>
-</section>
-</main>
-
-<footer><div class="footer-inner"><strong>GARDEN</strong><br><span class="small">Relational evangelism for the long game.</span></div></footer>
-</body>
-</html>
+<p>It is designed not merely to help Christians decide what they think, but to help them become better readers of Scripture, better conversation partners, and more faithful members of the body of Christ.</p></article></div>
+<section class="guard"><div class="container"><h2>AI is the assistant. It is not the authority.</h2><p>Use the framework to structure reflection and research, then verify important claims and bring the result back into real Christian judgment, Scripture, trusted sources, prayer, and relationship.</p></div></section>
+</main><footer class="footer"><div class="container"><strong>GARDEN</strong><span>Thoughtful, relational evangelism for the long game.</span></div></footer></body></html>

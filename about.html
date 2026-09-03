@@ -1,123 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About | GARDEN</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The story and purpose behind GARDEN: a practical approach to thoughtful, relational Christian evangelism.">
+<title>About — GARDEN</title>
 <style>
-:root{--ink:#243229;--muted:#647067;--cream:#f7f4ec;--paper:#fffdf8;--green:#365b43;--green2:#56745f;--line:#dcd8cd;--soft:#edf1e8}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.68}
-header{background:#fffdf8f5;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;gap:24px;align-items:center}
-.brand{font-family:Georgia,serif;font-weight:bold;letter-spacing:.08em;color:var(--green);text-decoration:none}nav{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap;justify-content:flex-end}nav a{text-decoration:none;font-size:.86rem;color:#48544c}nav a.active,nav a:hover{color:var(--green);text-decoration:underline;text-underline-offset:5px}
-.hero{background:linear-gradient(135deg,#edf1e8,#f7f4ec);border-bottom:1px solid var(--line)}.hero-inner,main,.footer-inner{max-width:1040px;margin:auto}.hero-inner{padding:82px 24px 72px}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:bold;color:var(--green2)}h1,h2,h3{font-family:Georgia,serif;line-height:1.16}h1{font-size:clamp(2.7rem,6vw,4.9rem);margin:.25em 0}.hero p{font-size:1.22rem;max-width:790px;color:#4d5a51}
-main{padding:64px 24px}section{margin-bottom:70px}h2{font-size:2rem}.lead{font-size:1.16rem;max-width:850px}.callout{border-left:4px solid var(--green);background:var(--paper);padding:22px 25px;margin:28px 0;border-radius:0 10px 10px 0}
-.story{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}.quote{font-family:Georgia,serif;font-size:1.55rem;line-height:1.45;text-align:center;max-width:820px;margin:42px auto;color:#33453a}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:25px}.card h3{margin-top:0}
-.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:28px 0}.pill{padding:10px 14px;background:var(--soft);border-radius:999px;font-weight:bold;color:var(--green)}.arrow{color:#819084}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:bold;background:var(--green);color:#fff}.btn.secondary{background:transparent;color:var(--green);border:1px solid var(--green)}
-footer{border-top:1px solid var(--line);background:var(--paper);padding:34px 24px}.small{font-size:.9rem;color:var(--muted)}
-@media(max-width:760px){.nav{flex-direction:column;align-items:flex-start}.nav nav{margin-left:0}.grid{grid-template-columns:1fr}}
-</style></head>
+:root{--navy:#102A43;--navy2:#173F60;--blue:#1565C0;--bright:#2D8CFF;--green:#2E7D55;--ice:#F1F7FC;--ink:#102A43;--muted:#526A7A;--line:#D6E3ED}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:17px/1.72 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3,.pullquote{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}a{color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(16,42,67,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-weight:800;letter-spacing:.18em;display:flex;align-items:center;gap:10px}.brand-mark{width:16px;height:22px;border:2px solid var(--green);border-radius:100% 0 100% 0;transform:rotate(-35deg)}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:14px}.nav-links a{text-decoration:none;color:#3D5A6C}.nav-links a[aria-current]{font-weight:850;color:var(--navy)}.nav-cta{padding:9px 14px;border-radius:999px;background:var(--blue);color:#fff!important}
+.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:900;color:var(--blue);margin-bottom:15px}
+.hero{padding:90px 0 84px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-150px;top:-190px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(45,140,255,.13),rgba(45,140,255,0) 68%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end;position:relative;z-index:2}.hero h1{font-size:clamp(54px,7vw,88px);letter-spacing:-.045em;max-width:760px}.hero .lede{font-size:21px;color:var(--muted);max-width:760px}
+.margin-note{border-left:4px solid var(--green);padding:8px 0 8px 22px;color:#426174}.margin-note strong{display:block;color:var(--navy);font-size:14px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.story{padding:92px 0}.story-grid{display:grid;grid-template-columns:230px minmax(0,720px);gap:70px;justify-content:center}
+.chapter{position:sticky;top:110px;align-self:start}.chapter span{display:block;font:700 62px/1 Georgia,serif;color:#C9DDEA}.chapter strong{display:block;margin-top:8px;text-transform:uppercase;letter-spacing:.13em;font-size:11px;color:var(--blue)}
+.prose h2{font-size:44px;margin-bottom:26px}.prose p{margin:0 0 22px;color:#314F61}.prose p:first-of-type:first-letter{float:left;font:700 76px/58px Georgia,serif;color:var(--blue);padding-right:10px;padding-top:8px}
+.pullquote{font-size:34px;color:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:31px 0;margin:42px 0}.pullquote em{color:var(--blue);font-style:normal}
+.hunt-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:30px 0}.hunt-list div{background:var(--ice);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:800;color:#426174}
+.turn{background:linear-gradient(135deg,#102A43,#1565C0);color:#fff;padding:74px 0}.turn-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}.turn h2{font-size:48px}.turn p{color:#DCEAF3}.question{font:700 34px/1.22 Georgia,serif;border-left:5px solid var(--green);padding-left:26px}
+.origins{padding:92px 0;background:var(--ice)}.origin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.origin{background:#fff;border:1px solid var(--line);padding:28px;border-radius:18px}.origin .n{font:700 44px/1 Georgia,serif;color:#B8D4E7}.origin h3{font-size:26px;margin:13px 0 10px}.origin p{font-size:15px;color:var(--muted);margin:0}
+.mission{padding:96px 0}.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.mission h2{font-size:48px}.mission-copy p{color:#38576A}.manifesto{display:grid;gap:0;border-top:1px solid var(--line)}.manifesto div{padding:19px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:42px 1fr;gap:14px}.manifesto span{font:700 20px Georgia,serif;color:var(--blue)}.manifesto strong{display:block}.manifesto small{color:var(--muted)}
+.long-game{padding:88px 0;background:#0A2033;color:#fff}.long-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.long-game h2{font-size:49px}.long-game p{color:#DDEEFF}.success{display:grid;gap:14px}.success div{padding:19px 21px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);border-radius:13px}.success strong{color:#9DD0FF}
+.truth{padding:90px 0}.truth-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:start}.truth h2{font-size:47px}.truth p{color:#38576A}.guardrail{background:#EAF4FB;border-left:5px solid var(--blue);padding:27px;border-radius:0 16px 16px 0}.guardrail h3{font-size:27px;margin-bottom:11px}.guardrail p{font-size:15px;margin:0}
+.final{padding:88px 0;text-align:center;background:linear-gradient(180deg,#F1F7FC,#fff)}.final h2{font-size:52px;max-width:760px;margin:auto}.final p{max-width:680px;margin:18px auto 27px;color:var(--muted)}.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:14px 20px;border-radius:999px;font-weight:850}
+.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){.nav-links a:not([aria-current]):not(.nav-cta){display:none}.hero-grid,.story-grid,.turn-grid,.mission-grid,.long-grid,.truth-grid{grid-template-columns:1fr}.chapter{position:static}.origin-grid{grid-template-columns:1fr}.hunt-list{grid-template-columns:1fr 1fr}}
+</style>
+</head>
 <body>
-<header><div class="nav"><a class="brand" href="index.html">GARDEN</a><nav><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a class="active" href="about.html">About</a></nav></div></header>
-
-<div class="hero"><div class="hero-inner">
-<div class="eyebrow">About GARDEN</div>
-<h1>Intentional evangelism for ordinary Christians.</h1>
-<p>GARDEN exists to help believers become more intentional with the people God has already placed in their lives—without requiring them to become professional apologists, gifted debaters, or fearless conversationalists first.</p>
-</div></div>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a><nav class="nav-links"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a aria-current="page" href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a></nav></div></header>
 
 <main>
-<section>
-<h2>How This Started</h2>
-<div class="story">
-<p>GARDEN grew out of a personal conviction.</p>
-<p>I was preparing for something I love: a backcountry hunting trip. Preparing well for a hunt requires far more than simply showing up in the mountains. I can spend an extraordinary amount of time studying a mountain range—looking at terrain, basins, drainages, water sources, access routes, weather, and the areas most likely to hold animals.</p>
-<p>Then there is everything I will carry. The pack. Gear. Clothing. Food. Water. Weight. What I need, what I can leave behind, and what could go wrong. Long before the hunt begins, I may have spent countless hours thinking through details most people would never know existed.</p>
-<p>While doing that preparation, I was struck by a simple question:</p>
-<div class="quote">If I am willing to put this much thought and effort into a hobby I care about, what would it look like to bring that kind of intentionality to the people I care about who do not know Christ?</div>
-<p>That question stayed with me.</p>
-<p>The first response was very simple. I began adding friends and family members to my prayer journal. I kept a few notes about conversations we had, things they believed, questions they raised, and little seeds of truth I had been able to share—what Greg Koukl has memorably described as putting a “stone in the shoe.”</p>
-<p>There was no website. No framework. No toolkit. It was simply an attempt to become more intentional.</p>
-<p>Over time, that conviction and habit grew into what became GARDEN.</p>
-</div>
-</section>
+<section class="hero"><div class="container hero-grid">
+<div><div class="eyebrow">Why GARDEN exists</div><h1>It started with a hunting trip—and an uncomfortable question.</h1><p class="lede">GARDEN grew out of a conviction about preparation: if I could put enormous thought into something I enjoyed, what would it look like to bring that same intentionality to the people I cared about?</p></div>
+<div class="margin-note"><strong>This is not a ministry formula.</strong>It is a practical toolkit for ordinary Christians who want to become more intentional about evangelism in the relationships they already have.</div>
+</div></section>
 
-<section>
-<h2>The Mission</h2>
-<p class="lead">The mission of GARDEN is to help ordinary Christians engage the people already in their lives with greater intentionality, confidence, wisdom, and faithfulness over time.</p>
-<p>Many Christians care deeply about evangelism but feel unprepared for spiritual conversations. They may be afraid of being asked a question they cannot answer, uncomfortable discussing controversial subjects, or convinced that effective evangelism requires a level of biblical, philosophical, or apologetic knowledge they do not possess.</p>
-<p>GARDEN begins somewhere different.</p>
-<div class="callout"><strong>You do not need to know the answer in the moment.</strong> You can listen. You can think later. You can learn when the pressure is gone. You can return to the conversation another day.</div>
-<p>That simple shift removes much of the pressure that keeps believers silent.</p>
-</section>
+<section class="story"><div class="container story-grid">
+<aside class="chapter"><span>01</span><strong>The origin</strong></aside>
+<article class="prose"><h2>I was preparing obsessively.</h2>
+<p>I was getting ready for a hunting trip, and I was doing what serious hunters do before heading into unfamiliar country: studying everything I could.</p>
+<div class="hunt-list"><div>Mountain ranges</div><div>Basins & drainages</div><div>Water sources</div><div>Likely success areas</div><div>Pack & gear</div><div>Food & logistics</div></div>
+<p>I was willing to spend hours thinking ahead—trying to understand the terrain, anticipate problems, and improve the odds of being ready when the moment came.</p>
+<div class="pullquote">Then a question landed harder than I expected: <em>What would this kind of preparation look like if I applied it to evangelism?</em></div>
+<p>Not evangelism as a program. Not approaching strangers with a script. I was thinking about the people already in my life—friends, relatives, coworkers, neighbors, people I genuinely cared about and would probably know for years.</p>
+<p>I realized I often cared deeply about them, prayed generally for them, and hoped spiritual conversations would happen—but I was not nearly as intentional about preparing for those conversations as I was about preparing for a hobby.</p>
+</article></div></section>
 
-<section>
-<h2>The Long Game</h2>
-<p>GARDEN is built around a relational view of evangelism. Most people are not going to reconsider their worldview because of one perfectly delivered argument. Beliefs, experiences, relationships, questions, doubts, and assumptions often develop over many years.</p>
-<p>Meaningful evangelism can unfold the same way.</p>
-<div class="flow">
-<span class="pill">Listen</span><span class="arrow">→</span>
-<span class="pill">Understand</span><span class="arrow">→</span>
-<span class="pill">Pray</span><span class="arrow">→</span>
-<span class="pill">Learn</span><span class="arrow">→</span>
-<span class="pill">Share</span><span class="arrow">→</span>
-<span class="pill">Follow Up</span>
-</div>
-<p>Sometimes the next faithful step is an answer. Sometimes it is a question. Sometimes it is sharing a podcast two weeks later. Sometimes it is simply listening well enough that another conversation remains possible.</p>
-<p>The aim is not to force a spiritual outcome. It is to faithfully cultivate opportunities for truth over time.</p>
-</section>
+<section class="turn"><div class="container turn-grid"><div><div class="eyebrow" style="color:#9DD0FF">The turning point</div><h2>So I started writing down names.</h2><p>I began adding friends and family members to my prayer journal. Alongside their names, I kept simple notes about conversations, questions, beliefs, and possible seeds worth planting later.</p></div><div class="question">“What is one thoughtful seed—or one ‘stone in the shoe’—that might help this person take another step toward truth?”</div></div></section>
 
-<section>
-<h2>Why “GARDEN”?</h2>
-<p>The name reflects the kind of evangelism this project is trying to encourage.</p>
-<p>A gardener cannot force a seed to grow. The gardener prepares soil, plants, waters, tends, protects, waits, and remains faithful to work that often develops slowly and beneath the surface.</p>
-<p>Evangelism has similar limits. Christians can reason, explain, ask questions, share truth, pray, love people, and remain present. We cannot manufacture belief.</p>
-<div class="quote">Our responsibility is faithfulness in planting and tending. The results ultimately belong to God.</div>
-</section>
+<section class="origins"><div class="container"><div class="eyebrow">From habit to framework</div><div class="origin-grid">
+<div class="origin"><div class="n">01</div><h3>Remember the person.</h3><p>Instead of treating evangelism as isolated conversations, pay attention to a person’s story, beliefs, questions, and experiences over time.</p></div>
+<div class="origin"><div class="n">02</div><h3>Prepare between conversations.</h3><p>You do not have to know the answer in the moment. Think, pray, research, and return later with something useful.</p></div>
+<div class="origin"><div class="n">03</div><h3>Play the long game.</h3><p>Plant thoughtful seeds without trying to force an outcome. Relationships give ideas time to be considered, revisited, and explored.</p></div>
+</div></div></section>
 
-<section>
-<h2>What GARDEN Is Designed to Solve</h2>
-<div class="grid">
-<div class="card"><h3>“I don't know enough.”</h3><p>You do not have to. Learn after the conversation and return later.</p></div>
-<div class="card"><h3>“I don't know what to say.”</h3><p>Conversational models and thoughtful questions give you ways to engage without needing a speech.</p></div>
-<div class="card"><h3>“I forget what we've talked about.”</h3><p>The Evangelism Profile Tool helps you remember conversations, prayer needs, resources shared, and possible next steps.</p></div>
-<div class="card"><h3>“I don't know who to trust.”</h3><p>Trusted Voices and the Research Library point toward carefully selected Christian thinkers and resources.</p></div>
-<div class="card"><h3>“AI gives me answers, but can I trust them?”</h3><p>The AI Frameworks give the tool theological and intellectual guardrails instead of treating generic AI output as authoritative.</p></div>
-<div class="card"><h3>“I'm uncomfortable talking about faith.”</h3><p>GARDEN lets you begin at your actual stage of preparedness and grow gradually rather than pretending confidence you do not have.</p></div>
-</div>
-</section>
+<section class="mission"><div class="container mission-grid"><div><div class="eyebrow">The mission</div><h2>Help ordinary Christians become intentional, prepared, and faithful.</h2><div class="mission-copy"><p>GARDEN is designed for believers who care about evangelism but may feel unprepared, uncomfortable, or unsure where to begin.</p><p>The goal is not to turn every Christian into a professional apologist. It is to help Christians grow from silence toward thoughtful engagement—and to keep growing after that.</p></div></div>
+<div class="manifesto">
+<div><span>01</span><div><strong>Relationships before tactics.</strong><small>People are not projects.</small></div></div>
+<div><span>02</span><div><strong>Questions before assumptions.</strong><small>Listen and understand before trying to answer.</small></div></div>
+<div><span>03</span><div><strong>Preparation instead of pressure.</strong><small>You are allowed to think and return later.</small></div></div>
+<div><span>04</span><div><strong>Resources instead of pretending expertise.</strong><small>Know where to go when a question arises.</small></div></div>
+<div><span>05</span><div><strong>Faithfulness instead of manufactured results.</strong><small>Our responsibility is real; the outcome belongs to God.</small></div></div>
+</div></div></section>
 
-<section>
-<h2>A Toolkit, Not a Formula</h2>
-<p>GARDEN is not a script for converting people and it is not a sequence that every relationship must follow.</p>
-<p>The tools exist to support faithful engagement: the GARDEN framework provides the overall approach; Your People encourages intentional prayer and follow-up; Conversational Models show what engagement can look like; Trusted Voices help users identify reliable teachers; the Research Library helps locate material on specific questions; and the AI Frameworks help believers use artificial intelligence more safely and productively for study and preparation.</p>
-<p>Use what is helpful. Return to tools when you need them. The person in front of you is always more important than completing a process.</p>
-</section>
+<section class="long-game"><div class="container long-grid"><div><div class="eyebrow" style="color:#9DD0FF">What success looks like</div><h2>Sometimes success is simply no longer staying silent.</h2><p>Growth can begin long before someone feels capable of giving a polished answer.</p></div>
+<div class="success">
+<div><strong>Stage One:</strong> “That’s a good question. I’m not sure how I’d answer that right now. Let me think about it and get back to you.”</div>
+<div><strong>Stage Two:</strong> “What do you mean by that?” “How did you come to that conclusion?” “Why do you think that’s true?”</div>
+<div><strong>Stage Three:</strong> Thoughtful questions combined with direct explanations, corrections, evidence, and worldview analysis.</div>
+</div></div></section>
 
-<section>
-<h2>What We Believe About Truth</h2>
-<p>GARDEN is intentionally Christian. It is not designed to approach Christianity and competing worldviews from a position of theological neutrality.</p>
-<p>The project operates within historic orthodox Christianity, with Scripture as the final authority for Christian belief and practice. At the same time, GARDEN encourages intellectual honesty: objections should be represented fairly, opposing arguments should be understood at their strongest, poor reasoning should not be attributed to someone merely because we disagree with them, and Christians should be willing to distinguish essential doctrines from legitimate secondary disagreements.</p>
-<p>Confidence in Christianity should never require intellectual shortcuts.</p>
-</section>
+<section class="truth"><div class="container truth-grid"><div><div class="eyebrow">Truth matters</div><h2>Relational does not mean vague.</h2><p>GARDEN encourages patience, listening, and humility, but none of those require treating every idea as equally true. Christianity makes real claims about God, Jesus, Scripture, humanity, morality, history, and salvation.</p><p>The aim is to pursue those questions carefully—grounded in Scripture, historic Christian orthodoxy, sound reasoning, evidence, and fair treatment of opposing views.</p></div>
+<div class="guardrail"><h3>A toolkit, not an authority.</h3><p>GARDEN, its recommended voices, its research library, and its AI frameworks are tools. None are infallible. Scripture remains primary, and Christians should continue developing the knowledge and judgment needed to evaluate what they encounter.</p></div></div></section>
 
-<section>
-<h2>What Success Looks Like</h2>
-<p>Success is not turning every Christian into an apologist.</p>
-<p>It is a believer who used to remain silent but now listens carefully. A believer who is willing to say, “That's a good question. Let me think about it.” A believer who remembers what a friend said three months ago and follows up. A believer who prays specifically for someone. A believer who learns enough about one question to have a better conversation the next time it comes up.</p>
-<p>And eventually, perhaps, a believer who realizes:</p>
-<div class="quote">“I can actually do this.”</div>
-<p>That is the kind of growth GARDEN is designed to cultivate.</p>
-</section>
-
-<section>
-<h2>Start With One Person</h2>
-<p class="lead">You do not need a ministry platform, a theology degree, or a list of strangers to approach.</p>
-<p>Think of one person God has already placed in your life. Pray for them. Listen to them. Pay attention to what they believe and what they care about. And when an opportunity comes, take the next faithful step.</p>
-<div class="actions"><a class="btn" href="start-here.html">Start Here</a><a class="btn secondary" href="people.html">Choose Your Person</a></div>
-</section>
+<section class="final"><div class="container"><div class="eyebrow">The first move is small</div><h2>You do not need a platform. You need a person.</h2><p>Think of one person already in your life. Begin praying for them. Pay attention. Learn. Prepare. And when an opportunity comes, be willing to take the next faithful step.</p><a class="btn" href="start-here.html">Start with one person →</a></div></section>
 </main>
-
-<footer><div class="footer-inner"><strong>GARDEN</strong><br><span class="small">Relational evangelism for the long game.</span></div></footer>
+<footer class="footer"><div class="container"><strong>GARDEN</strong><span>Thoughtful, relational evangelism for the long game.</span></div></footer>
 </body></html>

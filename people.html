@@ -1,165 +1,208 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="The Evangelism Profile Tool helps believers pray, remember, follow up, and engage the people God has already placed in their lives." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Your People — GARDEN</title>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+<style>
+:root{
+  --ink:#102A43; --forest:#2E7D55; --forest2:#256847; --sage:#DDEEFF;
+  --sage2:#F1F7FC; --cream:#FFFFFF; --paper:#FFFFFF; --gold:#2D8CFF;
+  --navy:#102A43; --blue:#1565C0; --bright:#2D8CFF;
+  --muted:#526A7A; --line:#D6E3ED; --shadow:0 22px 60px rgba(16,42,67,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(16,42,67,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-weight:800;letter-spacing:.18em;display:flex;align-items:center;gap:10px}
+.brand-mark{width:16px;height:22px;border:2px solid var(--forest);border-radius:100% 0 100% 0;transform:rotate(-35deg);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:14px}
+.nav-links a{text-decoration:none;color:#3D5A6C}.nav-links a[aria-current]{font-weight:800;color:var(--navy)}
+.nav-cta{padding:9px 14px;border-radius:999px;background:var(--blue);color:white!important}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:var(--blue);margin-bottom:14px}
+.btn{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:750}
+.btn-primary{background:var(--blue);color:white}.btn-secondary{border:1px solid #9DB9CF;background:#FFFFFF}
+.hero{overflow:hidden;padding:76px 0 82px;background:
+ radial-gradient(circle at 84% 15%,rgba(45,140,255,.22),transparent 30%),
+ radial-gradient(circle at 70% 78%,rgba(21,101,192,.10),transparent 26%),
+ linear-gradient(180deg,#FFFFFF 0%,#EEF7FF 100%)}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.hero h1{font-size:clamp(48px,6vw,78px);max-width:760px;letter-spacing:-.035em}
+.lede{font-size:20px;color:#53635b;max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.profile-shell{position:relative}
+.profile-shell:before{content:"";position:absolute;inset:24px -20px -24px 28px;background:#CFE8FF;border-radius:28px;transform:rotate(1deg)}
+.profile-card{position:relative;border-top:6px solid var(--bright);background:var(--paper);border:1px solid #C8DBE9;border-radius:22px;box-shadow:var(--shadow);overflow:hidden;transform:none}
+.profile-top{padding:26px 30px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;background:linear-gradient(90deg,#FFFFFF,#EDF7FF)}
+.profile-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#607B8E}
+.profile-name{font:700 38px Georgia,serif;margin-top:4px}.pill{font-size:12px;font-weight:800;padding:7px 10px;border:1px solid #B8D2E5;border-radius:999px;background:#F1F7FC}
+.profile-body{display:grid;grid-template-columns:1fr 1fr}
+.profile-cell{padding:20px 26px;border-bottom:1px solid var(--line)}
+.profile-cell:nth-child(odd){border-right:1px solid var(--line)}
+.profile-cell.wide{grid-column:1/-1;border-right:0}
+.profile-cell.next{background:#E5F3FF}
+.profile-cell b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#607B8E;margin-bottom:6px}
+.profile-cell span{font-size:14px;color:#29485B}
+.profile-cell.next span{font-family:Georgia,serif;font-size:17px;color:var(--navy)}
+.guardrail{border-top:4px solid var(--forest);background:linear-gradient(135deg,#102A43,#1565C0);color:#FFFFFF;padding:28px 0}
+.guardrail .container{display:flex;align-items:center;gap:30px;justify-content:center;text-align:center}
+.guardrail strong{font:700 27px Georgia,serif}.guardrail span{color:#E6F3FF}
+.section{padding:88px 0}.section.white{background:#FFFFFF}.section.sage{background:#E5F3FF}
+.section-head{max-width:760px;margin-bottom:38px}.section h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.025em}
+.section-head p{font-size:18px;color:#5d6c64}
+.notebook{display:grid;grid-template-columns:310px 1fr;border:1px solid #d4d8cf;border-radius:24px;overflow:hidden;background:var(--paper);box-shadow:0 15px 40px rgba(24,53,43,.07)}
+.notebook-index{background:linear-gradient(180deg,#102A43,#174E7A);color:white;padding:34px 28px}
+.notebook-index h3{font-size:28px;margin-bottom:12px}.notebook-index p{color:#cddbd2}
+.index-list{margin-top:30px;display:grid;gap:8px}.index-list span{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:13px}
+.fields{display:grid;grid-template-columns:1fr 1fr}
+.field{padding:28px 30px;border-bottom:1px solid var(--line);min-height:165px}
+.field:nth-child(odd){border-right:1px solid var(--line)}
+.field .num{font-size:11px;letter-spacing:.14em;color:var(--bright);font-weight:900}.field h3{font-size:22px;margin:6px 0 8px}.field p{margin:0;color:#526A7A;font-size:14px}
+.field.emphasis{background:#E5F3FF}
+.example-wrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:start}
+.margin-note{border-left:3px solid var(--bright);padding:4px 0 4px 18px;color:#526A7A;margin-top:26px}
+.real-profile{background:#fff;border:1px solid #d8ddd4;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.real-profile header{padding:28px 32px;background:#EEF7FF;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.real-profile h3{font-size:36px}.real-profile dl{margin:0}
+.real-profile dl div{display:grid;grid-template-columns:180px 1fr;padding:18px 30px;border-bottom:1px solid var(--line)}
+.real-profile dt{font-weight:800;color:#426174}.real-profile dd{margin:0}
+.real-profile .next-seed{background:#E5F3FF}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);position:relative;gap:22px;margin-top:50px}
+.timeline:before{content:"";position:absolute;top:22px;left:8%;right:8%;height:1px;background:#aeb9af}
+.step{position:relative;padding-top:52px}.step .dot{position:absolute;top:11px;left:0;width:23px;height:23px;border:6px solid #D7ECFF;background:var(--blue);border-radius:50%}
+.step h3{font-size:24px}.step p{color:#526A7A;font-size:14px}
+.template{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.paper{background:var(--paper);border:1px solid #d7d8cf;box-shadow:0 16px 45px rgba(24,53,43,.09);padding:30px;border-radius:6px;transform:none}
+.paper-title{font:700 25px Georgia,serif;border-bottom:2px solid var(--bright);padding-bottom:12px;margin-bottom:10px}
+.paper-line{padding:11px 0;border-bottom:1px solid #d8ddd4;color:#607B8E;font-size:14px}
+.final{border-top:5px solid var(--bright);padding:75px 0;background:linear-gradient(135deg,#102A43 0%,#1565C0 72%,#2D8CFF 140%);color:#fff;text-align:center}.final h2{font-size:48px}.final p{max-width:700px;margin:18px auto 26px;color:#d8e2dc}
+.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){
+ .nav-links a:not([aria-current]):not(.nav-cta){display:none}
+ .hero-grid,.example-wrap,.template,.notebook{grid-template-columns:1fr}
+ .profile-shell{margin-top:20px}.fields,.profile-body{grid-template-columns:1fr}
+ .profile-cell:nth-child(odd),.field:nth-child(odd){border-right:0}
+ .profile-cell.wide{grid-column:auto}
+ .notebook-index{padding-bottom:22px}.index-list{display:none}
+ .timeline{grid-template-columns:1fr}.timeline:before{display:none}
+ .real-profile dl div{grid-template-columns:1fr;gap:5px}
+ .hero{padding-top:48px}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-<div class="container nav">
-<a aria-label="GARDEN home" class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"></span><span class="brand-name">GARDEN</span></a>
-<button aria-controls="primary-nav" aria-expanded="false" class="menu-btn">Menu</button>
-<nav aria-label="Primary navigation" class="nav-links" id="primary-nav"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a aria-current="page" href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a></nav>
-</div>
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a aria-current="page" href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a>
+</nav>
+  </div>
 </header>
-<main id="main">
-<section class="people-hero">
-<div class="container people-hero-grid">
-<div>
-<div class="eyebrow">The Evangelism Profile Tool</div>
-<h1>Your mission field is already in your life.</h1>
-<p class="lede">The people you hope will one day know Christ are often already in your contacts, at your workplace, across the street, around your dinner table, or beside you at your kids' activities.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#profile">See the profile ↓</a>
-<a class="btn btn-secondary" href="#example">View an example</a>
-</div>
-</div>
-<aside class="people-hero-card">
-<div class="tool-kicker">The shift</div>
-<h2>From random moments to intentional relationships.</h2>
-<p>You are not creating a project around a person. You are simply remembering what matters so you can pray, listen, follow up, and engage more thoughtfully over time.</p>
-</aside>
-</div>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">The Evangelism Profile Tool</div>
+   <h1>Your mission field is already in your life.</h1>
+   <p class="lede">The people you hope will one day know Christ are often already in your contacts, at your workplace, across the street, around your dinner table, or beside you at your kids' activities.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#profile">Explore the profile ↓</a><a class="btn btn-secondary" href="#example">See Mark's example</a></div>
+  </div>
+  <div class="profile-shell" aria-label="Example evangelism profile">
+   <article class="profile-card">
+    <div class="profile-top"><div><div class="profile-label">Evangelism Profile · Example</div><div class="profile-name">Mark</div></div><span class="pill">Coworker</span></div>
+    <div class="profile-body">
+      <div class="profile-cell"><b>Beliefs</b><span>Atheist · Science disproves God · Distrusts religion</span></div>
+      <div class="profile-cell"><b>Life</b><span>Divorced · One daughter · Father died young</span></div>
+      <div class="profile-cell"><b>Conversations</b><span>Morality · Suffering · Meaning</span></div>
+      <div class="profile-cell"><b>Prayer</b><span>Through divorce · Openness · Wisdom</span></div>
+      <div class="profile-cell wide next"><b>Next seed to plant</b><span>Revisit meaning and purpose when it comes up naturally →</span></div>
+    </div>
+   </article>
+  </div>
+ </div>
 </section>
-<section class="section alt">
-<div class="container people-intro-grid">
-<div>
-<div class="eyebrow">Why this tool exists</div>
-<h2>Good conversations are easy to lose.</h2>
-<p class="lede">A friend raises a question. A coworker mentions a painful experience. A family member makes a comment about faith. Then life moves on.</p>
-</div>
-<div class="people-copy">
-<p>Weeks or months later, we may forget what was said, which resources we shared, or what we meant to follow up on. The Evangelism Profile Tool helps believers hold onto those moments without making relationships feel forced or mechanical.</p>
-<p>The goal is simple: become more intentional with the people you already care about.</p>
-</div>
-</div>
+
+<section class="guardrail"><div class="container"><strong>People are not projects.</strong><span>The profile exists to help you remember, pray, listen, and follow up with greater care—not to “work” someone toward a result.</span></div></section>
+
+<section class="section white">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Why this tool exists</div><h2>Good conversations are easy to lose.</h2><p>A friend raises a question. A coworker mentions a painful experience. A family member makes a comment about faith. Then life moves on. A few thoughtful notes can help you remember what mattered when another opportunity comes.</p></div>
+ </div>
 </section>
-<section class="quote-band">
-<div class="container">
-<blockquote>If we can keep detailed notes about work projects, finances, or hobbies, surely we can take a few minutes to think intentionally about the eternal future of the people we love.</blockquote>
-</div>
+
+<section class="section sage" id="profile">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">The profile</div><h2>A field notebook for the people you care about.</h2><p>You do not need to fill out everything. The categories simply help you notice what may matter over time.</p></div>
+  <div class="notebook">
+   <aside class="notebook-index">
+    <div class="eyebrow" style="color:#70B6FF">Evangelism Profile</div><h3>Remember what matters.</h3><p>Short notes. Real people. Prayerful attention.</p>
+    <div class="index-list"><span>01 Basic Information</span><span>02 Background</span><span>03 Beliefs &amp; Worldview</span><span>04 Questions &amp; Objections</span><span>05 Important Conversations</span><span>06 Resources Shared</span><span>07 Prayer Notes</span><span>08 Next Seed to Plant</span></div>
+   </aside>
+   <div class="fields">
+    <div class="field"><div class="num">01</div><h3>Basic Information</h3><p>Name, relationship, how often you interact, and the context in which you know them.</p></div>
+    <div class="field"><div class="num">02</div><h3>Background</h3><p>Important experiences, relationships, losses, church background, or life circumstances that may shape how they see the world.</p></div>
+    <div class="field"><div class="num">03</div><h3>Beliefs &amp; Worldview</h3><p>What they seem to believe about God, Christianity, truth, morality, science, meaning, or purpose.</p></div>
+    <div class="field"><div class="num">04</div><h3>Questions &amp; Objections</h3><p>Recurring issues such as suffering, biblical reliability, science and faith, hypocrisy, or religious pluralism.</p></div>
+    <div class="field"><div class="num">05</div><h3>Important Conversations</h3><p>Short notes on meaningful discussions so future conversations can build on what has already happened.</p></div>
+    <div class="field"><div class="num">06</div><h3>Resources Shared</h3><p>Videos, podcasts, articles, books, or ideas you have already passed along.</p></div>
+    <div class="field"><div class="num">07</div><h3>Prayer Notes</h3><p>Specific ways you can pray for this person, their circumstances, and future opportunities.</p></div>
+    <div class="field emphasis"><div class="num">08</div><h3>Next Seed to Plant</h3><p>The next natural step: ask a question, revisit a topic, share a resource, invite them somewhere, or simply continue building the relationship.</p></div>
+   </div>
+  </div>
+ </div>
 </section>
-<section class="section">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">People are not projects</div>
-<h2>Intentional does not mean manipulative.</h2>
-<p>This tool is not a sales pipeline, a scorecard, or a system for “working” people toward a result. It is a practical aid for remembering, praying, and following up with greater care.</p>
-</div>
-<div class="people-values-grid">
-<article class="card"><div class="card-num">Listen</div><h3>Remember the whole person.</h3><p>Background, experiences, pain, relationships, and beliefs all shape how someone hears spiritual ideas.</p></article>
-<article class="card"><div class="card-num">Pray</div><h3>Pray specifically.</h3><p>Move beyond generic prayers by remembering real struggles, questions, and circumstances.</p></article>
-<article class="card"><div class="card-num">Follow up</div><h3>Continue naturally.</h3><p>Remember what was discussed so a future question, resource, or conversation can build on what came before.</p></article>
-</div>
-</div>
+
+<section class="section white" id="example">
+ <div class="container example-wrap">
+  <div>
+   <div class="eyebrow">Example profile</div><h2>Continuity, not documentation for its own sake.</h2>
+   <p class="lede">The profile does not need to read like a report. Short notes are enough to help you remember the person, the conversation, and the next faithful step.</p>
+   <div class="margin-note">Two people can raise the same objection for very different reasons. Remembering the person helps you respond to more than an argument.</div>
+  </div>
+  <article class="real-profile">
+   <header><div><div class="profile-label">Example</div><h3>Mark</h3></div><span class="pill">Coworker</span></header>
+   <dl>
+    <div><dt>Background</dt><dd>Divorced. One daughter. Father died when he was young.</dd></div>
+    <div><dt>Beliefs</dt><dd>Atheist. Believes science disproves God. Distrusts organized religion.</dd></div>
+    <div><dt>Struggles / Questions</dt><dd>Loneliness. Meaning and purpose. Suffering.</dd></div>
+    <div><dt>Past Conversations</dt><dd>Morality discussion (April). Problem of evil (June).</dd></div>
+    <div><dt>Resources Shared</dt><dd>John Lennox video. Article on the moral argument.</dd></div>
+    <div><dt>Prayer Notes</dt><dd>Pray for him through the divorce and for openness to spiritual questions.</dd></div>
+    <div class="next-seed"><dt>Next Seed to Plant</dt><dd>Revisit the meaning/purpose conversation when it comes up naturally.</dd></div>
+   </dl>
+  </article>
+ </div>
 </section>
-<section class="section alt" id="profile">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">The profile</div>
-<h2>What to keep track of.</h2>
-<p>You do not need to fill out everything. Even a few useful notes can help. The template simply gives you categories to think through when they are relevant.</p>
-</div>
-<div class="profile-fields-grid">
-<article class="profile-field"><span>01</span><div><h3>Basic Information</h3><p>Name, relationship, how often you interact, and the context in which you know them.</p></div></article>
-<article class="profile-field"><span>02</span><div><h3>Background</h3><p>Important experiences, relationships, losses, church background, or life circumstances that may shape how they see the world.</p></div></article>
-<article class="profile-field"><span>03</span><div><h3>Beliefs &amp; Worldview</h3><p>What they seem to believe about God, Christianity, truth, morality, science, meaning, or purpose.</p></div></article>
-<article class="profile-field"><span>04</span><div><h3>Questions &amp; Objections</h3><p>Recurring issues or concerns such as suffering, biblical reliability, science and faith, hypocrisy, or religious pluralism.</p></div></article>
-<article class="profile-field"><span>05</span><div><h3>Important Conversations</h3><p>Short notes on meaningful discussions so future conversations can build on what has already happened.</p></div></article>
-<article class="profile-field"><span>06</span><div><h3>Resources Shared</h3><p>Videos, podcasts, articles, books, or ideas you have already passed along.</p></div></article>
-<article class="profile-field"><span>07</span><div><h3>Prayer Notes</h3><p>Specific ways you can pray for this person, their circumstances, and future opportunities.</p></div></article>
-<article class="profile-field emphasis"><span>08</span><div><h3>Next Seed to Plant</h3><p>The next natural step: ask a question, revisit a topic, share a resource, invite them somewhere, or simply continue building the relationship.</p></div></article>
-</div>
-</div>
+
+<section class="section sage">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">How it works</div><h2>A small habit that supports the long game.</h2></div>
+  <div class="timeline">
+   <div class="step"><div class="dot"></div><h3>Notice</h3><p>Pay attention to meaningful comments, questions, struggles, and spiritual openings.</p></div>
+   <div class="step"><div class="dot"></div><h3>Record</h3><p>Later, jot down only what will help you remember and engage thoughtfully.</p></div>
+   <div class="step"><div class="dot"></div><h3>Pray</h3><p>Use what you know to pray specifically for the person rather than abstractly.</p></div>
+   <div class="step"><div class="dot"></div><h3>Take the next step</h3><p>Follow up, share a resource, ask another question, or simply continue the relationship.</p></div>
+  </div>
+ </div>
 </section>
-<section class="section" id="example">
-<div class="container example-profile-grid">
-<div>
-<div class="eyebrow">Example profile</div>
-<h2>What this might look like in real life.</h2>
-<p class="lede">The profile does not need to read like a report. Short notes are enough to help you remember the person, the conversation, and the next faithful step.</p>
-<div class="example-note">The details below are intentionally simple. The purpose is continuity, not documentation for its own sake.</div>
-</div>
-<article class="profile-example-card">
-<div class="profile-example-head"><div><span class="tool-kicker">Example</span><h3>Mark</h3></div><span class="relationship-pill">Coworker</span></div>
-<dl class="profile-example-list">
-<div><dt>Background</dt><dd>Divorced. One daughter. Father died when he was young.</dd></div>
-<div><dt>Beliefs</dt><dd>Atheist. Believes science disproves God. Distrusts organized religion.</dd></div>
-<div><dt>Struggles / Questions</dt><dd>Loneliness. Meaning and purpose. Suffering.</dd></div>
-<div><dt>Past Conversations</dt><dd>Morality discussion (April). Problem of evil (June).</dd></div>
-<div><dt>Resources Shared</dt><dd>John Lennox video. Article on the moral argument.</dd></div>
-<div><dt>Prayer Notes</dt><dd>Pray for him through the divorce and for openness to spiritual questions.</dd></div>
-<div class="next-seed"><dt>Next Seed to Plant</dt><dd>Revisit the meaning/purpose conversation when it comes up naturally.</dd></div>
-</dl>
-</article>
-</div>
+
+<section class="section white">
+ <div class="container template">
+  <div><div class="eyebrow">Use the template</div><h2>Keep it simple. Make it yours.</h2><p class="lede">Use the profile however it works best for you—on paper, in a document, or in your own notes system. Your personal information stays with you; GARDEN does not need to store it.</p></div>
+  <div class="paper"><div class="paper-title">Evangelism Profile</div><div class="paper-line">Name / Relationship</div><div class="paper-line">Background</div><div class="paper-line">Beliefs &amp; Worldview</div><div class="paper-line">Questions / Objections</div><div class="paper-line">Important Conversations</div><div class="paper-line">Resources Shared</div><div class="paper-line">Prayer Notes</div><div class="paper-line">Next Seed to Plant</div></div>
+ </div>
 </section>
-<section class="section alt">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">How it works</div>
-<h2>A small habit that supports the long game.</h2>
-</div>
-<div class="profile-flow">
-<div class="flow-step"><div class="dot"></div><h3>1. Notice</h3><p>Pay attention to meaningful comments, questions, struggles, and spiritual openings.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>2. Record</h3><p>Later, jot down only what will help you remember and engage thoughtfully.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>3. Pray</h3><p>Use what you know to pray specifically for the person rather than abstractly.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>4. Take the next step</h3><p>Follow up, share a resource, ask another question, or simply continue the relationship.</p></div>
-</div>
-</div>
-</section>
-<section class="section" id="template">
-<div class="container template-callout">
-<div>
-<div class="eyebrow">Use the template</div>
-<h2>Keep it simple. Make it yours.</h2>
-<p>The eventual downloadable profile will be designed to work however you prefer—printed, copied into Word or Google Docs, or kept in your own notes system. Your personal information stays with you; the website does not need to store it.</p>
-</div>
-<div aria-label="Profile template preview" class="template-preview">
-<strong>Evangelism Profile</strong>
-<span>Name / Relationship</span>
-<span>Background</span>
-<span>Beliefs &amp; Worldview</span>
-<span>Questions / Objections</span>
-<span>Important Conversations</span>
-<span>Resources Shared</span>
-<span>Prayer Notes</span>
-<span>Next Seed to Plant</span>
-</div>
-</div>
-</section>
-<section class="final-cta">
-<div class="container">
-<div class="box">
-<div class="eyebrow light">Start small</div>
-<h2>Begin with one person.</h2>
-<p>You do not need profiles for everyone you know. Choose one person you already care about. Pray for them. Pay attention. Write down what matters. Then take the next faithful step when the opportunity comes.</p>
-<a class="btn btn-light" href="conversations.html">Explore Conversations →</a>
-</div>
-</div>
-</section>
+
+<section class="final"><div class="container"><div class="eyebrow" style="color:#70B6FF">Start small</div><h2>Begin with one person.</h2><p>You do not need profiles for everyone you know. Choose one person you already care about. Pray for them. Pay attention. Write down what matters. Then take the next faithful step when the opportunity comes.</p><a class="btn btn-secondary" style="color:white;border-color:#9DD0FF" href="#">Explore Conversations →</a></div></section>
 </main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div><strong>GARDEN</strong><p>A practical toolkit for long-game, relational evangelism.</p></div>
-<div class="footer-links"><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a></div>
-</div>
-</footer>
+
+<footer class="footer"><div class="container"><strong>GARDEN</strong><span>A practical toolkit for thoughtful, relational, long-game evangelism.</span></div></footer>
 </body>
 </html>

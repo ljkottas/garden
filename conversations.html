@@ -1,267 +1,241 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Conversational Models help believers start spiritual conversations, engage at their current stage of preparedness, and learn through realistic examples." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Conversational Models help believers start spiritual conversations, engage at their current stage of preparedness, and learn through realistic examples.">
 <title>Conversational Models — GARDEN</title>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+<style>
+:root{
+  --navy:#102A43;
+  --navy2:#173F60;
+  --blue:#1565C0;
+  --bright:#2D8CFF;
+  --green:#2E7D55;
+  --white:#FFFFFF;
+  --ice:#F1F7FC;
+  --ice2:#E8F3FC;
+  --ink:#102A43;
+  --muted:#526A7A;
+  --line:#D6E3ED;
+  --shadow:0 22px 60px rgba(16,42,67,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(16,42,67,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-weight:800;letter-spacing:.18em;display:flex;align-items:center;gap:10px}
+.brand-mark{width:16px;height:22px;border:2px solid var(--green);border-radius:100% 0 100% 0;transform:rotate(-35deg);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:14px}
+.nav-links a{text-decoration:none;color:#3D5A6C}
+.nav-links a[aria-current]{font-weight:800;color:var(--navy)}
+.nav-cta{padding:9px 14px;border-radius:999px;background:var(--blue);color:#fff!important}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:var(--blue);margin-bottom:14px}
+.btn{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:750}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-secondary{background:#fff;border:1px solid #9DB9CF;color:var(--navy)}
+
+.hero{padding:70px 0 76px;background:
+radial-gradient(circle at 82% 18%,rgba(45,140,255,.18),transparent 28%),
+linear-gradient(180deg,#fff 0%,#EEF7FF 100%)}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(48px,6vw,76px);letter-spacing:-.035em;max-width:760px}
+.lede{font-size:20px;color:var(--muted);max-width:660px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.dialogue-stage{position:relative;min-height:420px}
+.dialogue-stage:before{content:"";position:absolute;inset:24px 15px 0 60px;border-radius:32px;background:linear-gradient(150deg,#102A43,#1565C0);box-shadow:var(--shadow)}
+.bubble{position:absolute;max-width:76%;padding:18px 20px;border-radius:22px;box-shadow:0 10px 28px rgba(16,42,67,.14);font-size:15px}
+.bubble.them{left:0;top:18px;background:#fff;border:1px solid #C8DBE9;border-bottom-left-radius:8px}
+.bubble.you{right:0;top:135px;background:var(--bright);color:#fff;border-bottom-right-radius:8px}
+.bubble.later{left:40px;top:255px;background:#EAF4FB;border:1px solid #BFD8EA;color:#36586D}
+.bubble.return{right:18px;top:330px;background:#fff;border:1px solid #C8DBE9;border-bottom-right-radius:8px}
+.speaker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:900;display:block;margin-bottom:5px;opacity:.72}
+
+.quote-band{background:linear-gradient(135deg,#102A43,#1565C0);color:white;padding:32px 0;border-top:4px solid var(--green)}
+.quote-band blockquote{margin:0 auto;max-width:900px;text-align:center;font:700 29px/1.3 Georgia,serif}
+
+.section{padding:88px 0}
+.section.alt{background:var(--ice)}
+.section-head{max-width:790px;margin-bottom:38px}
+.section h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.025em}
+.section-head p{font-size:18px;color:var(--muted)}
+
+.starters{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.starter{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;min-height:210px;overflow:hidden}
+.starter:before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:var(--bright)}
+.starter small{font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.starter blockquote{font:700 23px/1.3 Georgia,serif;margin:16px 0 14px}
+.starter p{margin:0;color:var(--muted);font-size:14px}
+
+.stages-wrap{display:grid;grid-template-columns:1fr;gap:18px}
+.stage-row{display:grid;grid-template-columns:180px 1fr 1.1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(16,42,67,.06)}
+.stage-badge{display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font:700 22px Georgia,serif;padding:24px}
+.stage-row:nth-child(2) .stage-badge{background:var(--blue)}
+.stage-row:nth-child(3) .stage-badge{background:var(--green)}
+.stage-copy,.stage-voice{padding:25px 28px}
+.stage-copy{border-right:1px solid var(--line)}
+.stage-copy h3{font-size:25px;margin-bottom:8px}
+.stage-copy p{margin:0;color:var(--muted)}
+.stage-voice{background:#F7FBFE;display:flex;align-items:center}
+.stage-voice blockquote{margin:0;font:700 18px/1.45 Georgia,serif;color:#173F60}
+.stage-note{margin-top:24px;padding:18px 22px;background:#E8F3FC;border-left:4px solid var(--bright);border-radius:8px;color:#36586D}
+
+.question-lab{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:start}
+.question-stack{display:grid;gap:14px}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px;display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}
+.qcard strong{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--blue)}
+.qcard span{font:700 19px Georgia,serif}
+
+.models{display:grid;gap:44px}
+.model-stage{display:grid;grid-template-columns:180px 1fr;gap:24px}
+.model-label{padding-top:10px}
+.model-label .num{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:white;font:700 24px Georgia,serif}
+.model-label h3{font-size:25px;margin-top:12px}
+.model-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.model-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.model-title{padding:17px 19px;font-weight:850;background:#EEF7FF;border-bottom:1px solid var(--line)}
+.chat{padding:18px}
+.chat p{margin:0 0 10px;padding:12px 13px;border-radius:14px;font-size:14px}
+.chat .them{background:#F2F5F7}
+.chat .you{background:#DDEEFF}
+.takeaway{padding:14px 18px;background:#F8FBFD;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+
+.long-game{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.long-game-panel{background:linear-gradient(135deg,#102A43,#173F60);color:#fff;border-radius:24px;padding:34px}
+.long-game-panel h3{font-size:31px;margin-bottom:12px}
+.long-game-panel p{color:#D9E8F2}
+.final{padding:76px 0;background:linear-gradient(135deg,#102A43 0%,#1565C0 72%,#2D8CFF 140%);color:#fff;text-align:center;border-top:5px solid var(--green)}
+.final h2{font-size:48px}
+.final p{max-width:720px;margin:18px auto 26px;color:#E6F3FF}
+.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}
+.footer .container{display:flex;justify-content:space-between;gap:20px}
+
+@media(max-width:900px){
+ .nav-links a:not([aria-current]):not(.nav-cta){display:none}
+ .hero-grid,.question-lab,.long-game,.model-stage{grid-template-columns:1fr}
+ .starters,.model-cards{grid-template-columns:1fr}
+ .stage-row{grid-template-columns:1fr}
+ .stage-copy{border-right:0;border-bottom:1px solid var(--line)}
+ .dialogue-stage{margin-top:12px}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-<div class="container nav">
-<a aria-label="GARDEN home" class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"></span><span class="brand-name">GARDEN</span></a>
-<button aria-controls="primary-nav" aria-expanded="false" class="menu-btn">Menu</button>
-<nav aria-label="Primary navigation" class="nav-links" id="primary-nav"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a aria-current="page" href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a></nav>
-</div>
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a aria-current="page" href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a>
+</nav>
+  </div>
 </header>
-<main id="main">
-<section class="conversation-hero">
-<div class="container conversation-hero-grid">
-<div>
-<div class="eyebrow">Conversational Models</div>
-<h1>Open the door. Start where you are. Grow from there.</h1>
-<p class="lede">You do not need to be an expert—or even comfortable talking about faith—to begin. Learn how to start meaningful conversations, engage at your current stage of preparedness, and follow up without pressure.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#starters">Start a conversation ↓</a>
-<a class="btn btn-secondary" href="#stages">Find your stage</a>
-</div>
-</div>
-<aside class="conversation-hero-card">
-<div class="tool-kicker">The point</div>
-<h2>You do not have to win the moment.</h2>
-<p>Sometimes the best response is a question. Sometimes it is, “That’s a good question—let me get back to you.” The goal is not instant mastery. The goal is faithful engagement over time.</p>
-</aside>
-</div>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">Conversational Models</div>
+   <h1>Open the door. Start where you are. Grow from there.</h1>
+   <p class="lede">You do not need to be an expert—or even comfortable talking about faith—to begin. Learn how to start meaningful conversations, engage at your current stage of preparedness, and follow up without pressure.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#starters">Start a conversation ↓</a><a class="btn btn-secondary" href="#stages">Find your stage</a></div>
+  </div>
+  <div class="dialogue-stage" aria-label="Example conversation">
+   <div class="bubble them"><span class="speaker">Friend</span>“If God is good, why does He allow children to suffer?”</div>
+   <div class="bubble you"><span class="speaker">You</span>“That’s a really good question. I’m not sure how I’d answer that right now.”</div>
+   <div class="bubble later"><span class="speaker">Later</span>You think, research, pray, and find a useful way to engage the question.</div>
+   <div class="bubble return"><span class="speaker">You, later</span>“I was thinking about what you said the other day…”</div>
+  </div>
+ </div>
 </section>
+
+<section class="quote-band"><div class="container"><blockquote>You do not have to win the moment. A good question, an honest pause, or a thoughtful follow-up may be enough.</blockquote></div></section>
+
 <section class="section alt" id="starters">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Starting spiritual conversations</div>
-<h2>Meaningful conversations often begin with one good question.</h2>
-<p>You do not need to force a transition or deliver a presentation. A thoughtful question can reveal what someone believes, invite reflection, and show you where a future conversation might naturally go.</p>
-</div>
-<div class="starter-grid">
-<article class="starter-card">
-<span class="starter-label">Meaning &amp; Purpose</span>
-<blockquote>“What do you think gives life meaning?”</blockquote>
-<p>Possible directions: purpose, human value, happiness, vocation, God.</p>
-</article>
-<article class="starter-card">
-<span class="starter-label">Death &amp; Eternity</span>
-<blockquote>“What do you think happens when we die?”</blockquote>
-<p>Possible directions: afterlife, soul, naturalism, judgment, hope, Jesus.</p>
-</article>
-<article class="starter-card">
-<span class="starter-label">Morality</span>
-<blockquote>“Where do you think our sense of right and wrong comes from?”</blockquote>
-<p>Possible directions: objective morality, culture, human nature, God.</p>
-</article>
-<article class="starter-card">
-<span class="starter-label">Truth</span>
-<blockquote>“Do you think truth is something we discover or create?”</blockquote>
-<p>Possible directions: relativism, evidence, knowledge, competing truth claims.</p>
-</article>
-<article class="starter-card">
-<span class="starter-label">God</span>
-<blockquote>“What has shaped the way you think about God?”</blockquote>
-<p>Possible directions: upbringing, suffering, church experiences, atheism, belief.</p>
-</article>
-<article class="starter-card">
-<span class="starter-label">Christianity</span>
-<blockquote>“What do you think Christianity gets right—and what do you think it gets wrong?”</blockquote>
-<p>Possible directions: Jesus, church, morality, hypocrisy, Bible, salvation.</p>
-</article>
-</div>
-<div class="conversation-note">
-<strong>Prepare without scripting.</strong>
-<p>If you plan to ask a question like “What do you think happens when we die?”, you can think ahead about several likely directions the answer may take. You are not memorizing a script—you are simply becoming more ready to listen well and recognize opportunities.</p>
-</div>
-</div>
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Starting spiritual conversations</div><h2>Meaningful conversations often begin with one good question.</h2><p>You do not need to force a transition or deliver a presentation. A thoughtful question can reveal what someone believes, invite reflection, and show you where a future conversation might naturally go.</p></div>
+  <div class="starters">
+   <article class="starter"><small>Meaning &amp; Purpose</small><blockquote>“What do you think gives life meaning?”</blockquote><p>Possible directions: purpose, human value, happiness, vocation, God.</p></article>
+   <article class="starter"><small>Death &amp; Eternity</small><blockquote>“What do you think happens when we die?”</blockquote><p>Possible directions: afterlife, soul, naturalism, judgment, hope, Jesus.</p></article>
+   <article class="starter"><small>Morality</small><blockquote>“Where do you think our sense of right and wrong comes from?”</blockquote><p>Possible directions: objective morality, culture, human nature, God.</p></article>
+   <article class="starter"><small>Truth</small><blockquote>“Do you think truth is something we discover or create?”</blockquote><p>Possible directions: relativism, evidence, knowledge, competing truth claims.</p></article>
+   <article class="starter"><small>God</small><blockquote>“What has shaped the way you think about God?”</blockquote><p>Possible directions: upbringing, suffering, church experiences, atheism, belief.</p></article>
+   <article class="starter"><small>Christianity</small><blockquote>“What do you think Christianity gets right—and what do you think it gets wrong?”</blockquote><p>Possible directions: Jesus, church, morality, hypocrisy, Bible, salvation.</p></article>
+  </div>
+ </div>
 </section>
-<section class="quote-band">
-<div class="container">
-<blockquote>The goal is not to force a conversation. The goal is to open a door—and be willing to walk through it when someone does.</blockquote>
-</div>
-</section>
+
 <section class="section" id="stages">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Different stages of preparedness</div>
-<h2>You can begin before you feel prepared.</h2>
-<p>Some believers feel completely unprepared and uncomfortable. Others have spent years thinking about these topics. The goal is not to jump immediately to expertise. Start where you are and grow over time.</p>
-</div>
-<div class="conversation-stage-grid">
-<article class="conversation-stage-card">
-<span class="stage-badge">Stage One</span>
-<h3>No knowledge. No comfort.</h3>
-<p>Listen. Notice the claim or question. You do not need to respond on the spot.</p>
-<div class="stage-example-line">“That’s a good question. I’m not sure how I’d answer that right now. Let me think about it and get back to you.”</div>
-<p class="stage-foot">Later, when the pressure is off, explore the issue and follow up.</p>
-</article>
-<article class="conversation-stage-card featured">
-<span class="stage-badge">Stage Two</span>
-<h3>Growing comfort. Limited knowledge.</h3>
-<p>Ask thoughtful questions. Clarify the claim, test the reasoning, and let the person who made the claim carry the burden of explaining it.</p>
-<div class="stage-example-line">“What do you mean by that?”   “How did you come to that conclusion?”</div>
-<p class="stage-foot">Keep asking until your comfort runs out or you reach a natural stopping point—then research and follow up later.</p>
-</article>
-<article class="conversation-stage-card">
-<span class="stage-badge">Stage Three</span>
-<h3>Knowledge and confidence together.</h3>
-<p>Combine strategic questions with clear responses, corrections, worldview analysis, and deeper discussion.</p>
-<div class="stage-example-line">Questions still matter—but now you can also explain why the claim succeeds or fails.</div>
-<p class="stage-foot">You may reach this stage in some topics long before others. That is normal.</p>
-</article>
-</div>
-</div>
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Different stages of preparedness</div><h2>You can begin before you feel prepared.</h2><p>Start where you are, but do not confuse a starting point with a destination. Your ability to engage should deepen as your knowledge and confidence grow.</p></div>
+  <div class="stages-wrap">
+   <article class="stage-row"><div class="stage-badge">Stage One</div><div class="stage-copy"><h3>No knowledge. No comfort.</h3><p>Listen. Notice the claim or question. You do not need to respond on the spot.</p></div><div class="stage-voice"><blockquote>“That’s a good question. I’m not sure how I’d answer that right now. Let me think about it and get back to you.”</blockquote></div></article>
+   <article class="stage-row"><div class="stage-badge">Stage Two</div><div class="stage-copy"><h3>Growing comfort. Limited knowledge.</h3><p>Ask thoughtful questions. Clarify the claim, test the reasoning, and keep the burden of proof on the person making the assertion.</p></div><div class="stage-voice"><blockquote>“What do you mean by that?”<br>“How did you come to that conclusion?”</blockquote></div></article>
+   <article class="stage-row"><div class="stage-badge">Stage Three</div><div class="stage-copy"><h3>Knowledge and confidence together.</h3><p>Combine strategic questions with clear responses, corrections, worldview analysis, and deeper discussion.</p></div><div class="stage-voice"><blockquote>Ask well. Answer when useful. Keep growing.</blockquote></div></article>
+  </div>
+  <div class="stage-note"><strong>Stage One is a legitimate place to begin, not a place to remain indefinitely.</strong> A mature believer should increasingly work toward being able to explain, defend, and apply Christian truth with wisdom and grace.</div>
+ </div>
 </section>
+
 <section class="section alt">
-<div class="container question-power-grid">
-<div>
-<div class="eyebrow">The power of questions</div>
-<h2>Questions do more than gather information.</h2>
-<p class="lede">They can clarify a claim, expose hidden assumptions, reveal contradictions, and keep the burden of proof on the person making the assertion.</p>
-</div>
-<div class="question-tool-list">
-<article><strong>Clarify</strong><span>“What do you mean by that?”</span></article>
-<article><strong>Ask for reasons</strong><span>“How did you come to that conclusion?”</span></article>
-<article><strong>Test consistency</strong><span>“Would that apply in every case?”</span></article>
-<article><strong>Expose implications</strong><span>“If that were true, what would follow?”</span></article>
-</div>
-</div>
+ <div class="container question-lab">
+  <div><div class="eyebrow">The power of questions</div><h2>Questions do more than gather information.</h2><p class="lede">They can clarify a claim, expose hidden assumptions, reveal contradictions, and keep the burden of proof on the person making the assertion.</p></div>
+  <div class="question-stack">
+   <div class="qcard"><strong>Clarify</strong><span>“What do you mean by that?”</span></div>
+   <div class="qcard"><strong>Ask for reasons</strong><span>“How did you come to that conclusion?”</span></div>
+   <div class="qcard"><strong>Test consistency</strong><span>“Would that apply in every case?”</span></div>
+   <div class="qcard"><strong>Expose implications</strong><span>“If that were true, what would follow?”</span></div>
+  </div>
+ </div>
 </section>
-<section class="section" id="models">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Modeled interactions</div>
-<h2>See what each stage looks like.</h2>
-<p>These are not scripts. They are examples designed to show how the same kinds of conversations can be handled differently depending on your knowledge and comfort.</p>
-</div>
-<div class="model-section-head"><span class="stage-badge">Stage One</span><h3>Listen now. Work through it later.</h3></div>
-<div class="model-grid">
-<article class="model-card">
-<div class="model-title">The Bible has been changed</div>
-<div class="mini-chat">
-<p class="them"><strong>Coworker:</strong> You can’t trust the Bible. It’s been changed so many times.</p>
-<p class="you"><strong>You:</strong> That’s interesting.</p>
-</div>
-<div class="later-box"><strong>Later:</strong> You look into manuscript transmission and Bible translations, then follow up: “I was thinking about what you said the other day. I found a short explanation that I thought was interesting.”</div>
-</article>
-<article class="model-card">
-<div class="model-title">Science disproves God</div>
-<div class="mini-chat">
-<p class="them"><strong>Friend:</strong> Science has basically disproved God anyway.</p>
-<p class="you"><strong>You:</strong> That’s an interesting thought.</p>
-</div>
-<div class="later-box"><strong>Later:</strong> You spend time learning about the issue, then say: “Remember when you mentioned science disproving God? I listened to something that challenged that idea. I’d be curious what you think.”</div>
-</article>
-<article class="model-card">
-<div class="model-title">A difficult question</div>
-<div class="mini-chat">
-<p class="them"><strong>Neighbor:</strong> If God is good, why does He allow children to suffer?</p>
-<p class="you"><strong>You:</strong> That’s a really good question. I’m not sure how I’d answer that right now. Let me think about it and get back to you.</p>
-</div>
-<div class="later-box"><strong>Later:</strong> You research the topic and return with a thoughtful resource or response when the pressure is gone.</div>
-</article>
-</div>
-<div class="model-section-head"><span class="stage-badge">Stage Two</span><h3>Ask questions that make the claim do the work.</h3></div>
-<div class="model-grid">
-<article class="model-card">
-<div class="model-title">There is no absolute truth</div>
-<div class="mini-chat">
-<p class="them"><strong>Friend:</strong> There is no such thing as absolute truth.</p>
-<p class="you"><strong>You:</strong> What do you mean by that?</p>
-<p class="them"><strong>Friend:</strong> Everybody has their own truth.</p>
-<p class="you"><strong>You:</strong> Is the statement “there is no absolute truth” absolutely true?</p>
-</div>
-<p class="model-takeaway">You have not delivered a lecture. The questions themselves expose a tension in the claim.</p>
-</article>
-<article class="model-card">
-<div class="model-title">Morality is subjective</div>
-<div class="mini-chat">
-<p class="them"><strong>Coworker:</strong> Morality is completely subjective.</p>
-<p class="you"><strong>You:</strong> What do you mean by subjective?</p>
-<p class="them"><strong>Coworker:</strong> Everyone decides what’s right and wrong for themselves.</p>
-<p class="you"><strong>You:</strong> Do you think racism or child abuse are just personal opinions?</p>
-</div>
-<p class="model-takeaway">The question tests whether the person can consistently live with the claim they made.</p>
-</article>
-<article class="model-card">
-<div class="model-title">Religion causes harm</div>
-<div class="mini-chat">
-<p class="them"><strong>Friend:</strong> Religion causes more harm than good.</p>
-<p class="you"><strong>You:</strong> What makes you think that?</p>
-<p class="them"><strong>Friend:</strong> Look at all the wars religion has caused.</p>
-<p class="you"><strong>You:</strong> Which wars are you thinking of specifically?</p>
-</div>
-<p class="model-takeaway">You are asking the person to support and define the claim rather than accepting a slogan at face value.</p>
-</article>
-</div>
-<div class="model-section-head"><span class="stage-badge">Stage Three</span><h3>Combine questions with clear explanation.</h3></div>
-<div class="model-grid">
-<article class="model-card">
-<div class="model-title">Science disproves God</div>
-<div class="mini-chat">
-<p class="them"><strong>Coworker:</strong> Science disproves God.</p>
-<p class="you"><strong>You:</strong> What do you mean by “disproves”?</p>
-<p class="them"><strong>Coworker:</strong> We don’t need God to explain things anymore.</p>
-<p class="you"><strong>You:</strong> Science is excellent at explaining natural processes, but do you think it can answer every type of question—like whether human life has objective value?</p>
-</div>
-<p class="model-takeaway">Now questions and explanation work together to distinguish scientific questions from philosophical ones.</p>
-</article>
-<article class="model-card">
-<div class="model-title">All religions teach the same thing</div>
-<div class="mini-chat">
-<p class="them"><strong>Friend:</strong> All religions basically teach the same thing.</p>
-<p class="you"><strong>You:</strong> What do you mean by that?</p>
-<p class="them"><strong>Friend:</strong> They all teach people to be good.</p>
-<p class="you"><strong>You:</strong> Many encourage moral behavior, but they make very different claims about God, reality, and salvation. Those claims cannot all be true in the same way.</p>
-</div>
-<p class="model-takeaway">You first clarify the claim, then provide a concise correction.</p>
-</article>
-<article class="model-card">
-<div class="model-title">You don’t need God to be moral</div>
-<div class="mini-chat">
-<p class="them"><strong>Friend:</strong> You don’t need God to be moral.</p>
-<p class="you"><strong>You:</strong> I agree. The question isn’t whether atheists can behave morally. The question is whether objective moral obligations can exist if God does not.</p>
-</div>
-<p class="model-takeaway">Knowledge lets you identify an important distinction without becoming combative.</p>
-</article>
-</div>
-</div>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Modeled interactions</div><h2>See what each stage looks like.</h2><p>These are not scripts. They are examples designed to show how similar conversations can be handled differently depending on your knowledge and comfort.</p></div>
+  <div class="models">
+   <section class="model-stage">
+    <div class="model-label"><div class="num">1</div><h3>Listen now. Work through it later.</h3></div>
+    <div class="model-cards">
+     <article class="model-card"><div class="model-title">The Bible has been changed</div><div class="chat"><p class="them"><strong>Coworker:</strong> You can’t trust the Bible. It’s been changed so many times.</p><p class="you"><strong>You:</strong> That’s interesting. I haven’t looked into that enough to give you a good answer.</p></div><div class="takeaway">Later: research manuscript transmission and follow up naturally.</div></article>
+     <article class="model-card"><div class="model-title">Science disproves God</div><div class="chat"><p class="them"><strong>Friend:</strong> Science has basically disproved God anyway.</p><p class="you"><strong>You:</strong> That’s an interesting thought.</p></div><div class="takeaway">Later: learn the issue, then return with a question, idea, or resource.</div></article>
+     <article class="model-card"><div class="model-title">A difficult question</div><div class="chat"><p class="them"><strong>Neighbor:</strong> If God is good, why does He allow children to suffer?</p><p class="you"><strong>You:</strong> I’m not sure how I’d answer that right now. Let me think about it.</p></div><div class="takeaway">Honesty preserves the conversation and gives you room to prepare.</div></article>
+    </div>
+   </section>
+
+   <section class="model-stage">
+    <div class="model-label"><div class="num" style="background:var(--blue)">2</div><h3>Ask questions that make the claim do the work.</h3></div>
+    <div class="model-cards">
+     <article class="model-card"><div class="model-title">There is no absolute truth</div><div class="chat"><p class="them"><strong>Friend:</strong> There is no such thing as absolute truth.</p><p class="you"><strong>You:</strong> What do you mean by that?</p><p class="you"><strong>You:</strong> Is that statement itself absolutely true?</p></div><div class="takeaway">The questions expose tension without requiring a lecture.</div></article>
+     <article class="model-card"><div class="model-title">Morality is subjective</div><div class="chat"><p class="them"><strong>Coworker:</strong> Morality is completely subjective.</p><p class="you"><strong>You:</strong> What do you mean by subjective?</p><p class="you"><strong>You:</strong> Do you think racism or child abuse are just personal opinions?</p></div><div class="takeaway">Test whether the claim can be lived consistently.</div></article>
+     <article class="model-card"><div class="model-title">Religion causes harm</div><div class="chat"><p class="them"><strong>Friend:</strong> Religion causes more harm than good.</p><p class="you"><strong>You:</strong> What makes you think that?</p><p class="you"><strong>You:</strong> Which examples are you thinking of specifically?</p></div><div class="takeaway">Ask the person to support and define the claim.</div></article>
+    </div>
+   </section>
+
+   <section class="model-stage">
+    <div class="model-label"><div class="num" style="background:var(--green)">3</div><h3>Combine questions with clear explanation.</h3></div>
+    <div class="model-cards">
+     <article class="model-card"><div class="model-title">Science disproves God</div><div class="chat"><p class="them"><strong>Coworker:</strong> Science disproves God.</p><p class="you"><strong>You:</strong> What do you mean by “disproves”?</p><p class="you"><strong>You:</strong> Science explains natural processes, but can it answer every kind of question?</p></div><div class="takeaway">Questions and explanation work together.</div></article>
+     <article class="model-card"><div class="model-title">All religions teach the same thing</div><div class="chat"><p class="them"><strong>Friend:</strong> All religions basically teach the same thing.</p><p class="you"><strong>You:</strong> What do you mean by that?</p><p class="you"><strong>You:</strong> They make very different claims about God, reality, and salvation.</p></div><div class="takeaway">Clarify first, then correct concisely.</div></article>
+     <article class="model-card"><div class="model-title">You don’t need God to be moral</div><div class="chat"><p class="them"><strong>Friend:</strong> You don’t need God to be moral.</p><p class="you"><strong>You:</strong> I agree that atheists can behave morally. The question is whether objective moral obligations can exist if God does not.</p></div><div class="takeaway">Knowledge helps you make the right distinction.</div></article>
+    </div>
+   </section>
+  </div>
+ </div>
 </section>
+
 <section class="section alt">
-<div class="container long-game-grid">
-<div>
-<div class="eyebrow">Remember the long game</div>
-<h2>A good conversation does not have to finish anything.</h2>
-</div>
-<div class="people-copy">
-<p>A question can be enough. A follow-up can be enough. A resource can be enough. The goal is not to force every conversation toward a conclusion—it is to faithfully plant, water, and continue engaging over time.</p>
-<p>If you reach the edge of your knowledge or comfort at any stage, you can always say, “Let me think about that and get back to you.” That is not failure. It is part of the model.</p>
-</div>
-</div>
+ <div class="container long-game">
+  <div><div class="eyebrow">Remember the long game</div><h2>A good conversation does not have to finish anything.</h2><p class="lede">A question can be enough. A follow-up can be enough. A resource can be enough. The goal is faithful engagement over time.</p></div>
+  <div class="long-game-panel"><h3>When you reach the edge of your knowledge, stop pretending.</h3><p>At any stage, you can say, “Let me think about that and get back to you.” That is not failure. It is part of the model—and often the beginning of better preparation.</p></div>
+ </div>
 </section>
-<section class="final-cta">
-<div class="container">
-<div class="box">
-<div class="eyebrow light">Take the next step</div>
-<h2>You do not need the perfect words.</h2>
-<p>Ask one meaningful question. Listen carefully. Notice where the conversation goes. Then use the rest of the toolkit to prepare, follow up, and continue the relationship.</p>
-<a class="btn btn-light" href="research.html">Search the Research Library →</a>
-</div>
-</div>
-</section>
+
+<section class="final"><div class="container"><div class="eyebrow" style="color:#9DD0FF">Take the next step</div><h2>You do not need the perfect words.</h2><p>Ask one meaningful question. Listen carefully. Notice where the conversation goes. Then use the rest of the toolkit to prepare, follow up, and continue the relationship.</p><a class="btn btn-secondary" href="research.html">Explore the Research Library →</a></div></section>
 </main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div><strong>GARDEN</strong><p>A practical toolkit for long-game, relational evangelism.</p></div>
-<div class="footer-links"><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a></div>
-</div>
-</footer>
+
+<footer class="footer"><div class="container"><strong>GARDEN</strong><span>Thoughtful, relational evangelism for the long game.</span></div></footer>
 </body>
 </html>

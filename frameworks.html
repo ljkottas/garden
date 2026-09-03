@@ -1,60 +1,174 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Choose the GARDEN AI framework that fits your conversation: external engagement or internal Christian dialogue.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AI Frameworks for GARDEN: structured ways to use AI for external evangelism engagement and internal Christian dialogue without treating AI as the authority.">
 <title>AI Frameworks — GARDEN</title>
-<link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+<style>
+:root{
+  --navy:#102A43;--navy2:#173F60;--blue:#1565C0;--bright:#2D8CFF;--green:#2E7D55;
+  --white:#fff;--ice:#F1F7FC;--ice2:#E8F3FC;--ink:#102A43;--muted:#526A7A;--line:#D6E3ED;
+  --shadow:0 22px 60px rgba(16,42,67,.14)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}
+a{color:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(16,42,67,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-weight:800;letter-spacing:.18em;display:flex;align-items:center;gap:10px}
+.brand-mark{width:16px;height:22px;border:2px solid var(--green);border-radius:100% 0 100% 0;transform:rotate(-35deg);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:14px}
+.nav-links a{text-decoration:none;color:#3D5A6C}.nav-links a[aria-current]{font-weight:850;color:var(--navy)}
+.nav-cta{padding:9px 14px;border-radius:999px;background:var(--blue);color:#fff!important}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:850;color:var(--blue);margin-bottom:14px}
+.btn{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:800}
+.btn-primary{background:var(--blue);color:#fff}.btn-secondary{background:#fff;border:1px solid #9DB9CF}
+.hero{padding:72px 0 80px;background:
+radial-gradient(circle at 82% 17%,rgba(45,140,255,.18),transparent 29%),
+linear-gradient(180deg,#fff 0%,#EEF7FF 100%)}
+.hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;align-items:center}
+.hero h1{font-size:clamp(50px,6vw,78px);letter-spacing:-.04em}.lede{font-size:20px;color:var(--muted)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+.router{background:#fff;border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}
+.router-top{text-align:center;padding:14px 12px 20px}.router-top strong{display:block;font:700 25px Georgia,serif}.router-top span{color:var(--muted);font-size:14px}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.route{min-height:230px;border-radius:20px;padding:24px;color:#fff;position:relative;overflow:hidden}
+.route:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,255,255,.22);border-radius:50%;right:-70px;bottom:-80px}
+.route.external{background:linear-gradient(145deg,#1565C0,#2D8CFF)}.route.internal{background:linear-gradient(145deg,#102A43,#173F60)}
+.route small{text-transform:uppercase;letter-spacing:.12em;font-weight:900;font-size:10px;color:#DDEEFF}
+.route h3{font-size:28px;margin:9px 0 10px}.route p{font-size:14px;color:#EAF4FB;max-width:90%}
+
+.section{padding:88px 0}.section.alt{background:var(--ice)}
+.section-head{max-width:800px;margin-bottom:40px}.section h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.025em}
+.section-head p{font-size:18px;color:var(--muted)}
+
+.principle{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:center}
+.authority{background:linear-gradient(145deg,#102A43,#1565C0);color:#fff;border-radius:26px;padding:36px;position:relative;overflow:hidden}
+.authority:before{content:"AI";position:absolute;right:16px;bottom:-18px;font:700 116px/1 Georgia,serif;color:rgba(255,255,255,.06)}
+.authority h3{font-size:34px;margin-bottom:12px}.authority p{color:#DCEAF3}.authority strong{color:#fff}
+.principles{display:grid;gap:13px}.principle-row{display:grid;grid-template-columns:48px 1fr;gap:15px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.principle-row .icon{width:38px;height:38px;border-radius:50%;background:#DDEEFF;color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:900}
+.principle-row h3{font-size:22px;margin-bottom:4px}.principle-row p{margin:0;color:var(--muted)}
+
+.pathways{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pathway{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff}
+.path-head{padding:28px;color:#fff}.pathway.external .path-head{background:linear-gradient(145deg,#1565C0,#2D8CFF)}.pathway.internal .path-head{background:linear-gradient(145deg,#102A43,#173F60)}
+.path-head small{text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:#DDEEFF}.path-head h3{font-size:34px;margin:8px 0 10px}.path-head p{color:#E8F3FC;margin:0}
+.steps{padding:24px}.step{display:grid;grid-template-columns:34px 1fr;gap:13px;padding:12px 0;border-bottom:1px solid #E7EEF3}.step:last-child{border-bottom:0}
+.step span{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#E7F2FB;color:var(--blue);font-size:12px;font-weight:900}
+.step strong{display:block;color:var(--navy)}.step small{color:var(--muted);font-size:13px}
+.path-cta{padding:0 24px 25px}.path-cta a{width:100%;text-align:center}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.compare-card{border-radius:20px;padding:26px}.compare-card.external{background:#E8F4FF;border:1px solid #BFD9EE}.compare-card.internal{background:#EFF3F6;border:1px solid #CEDAE2}
+.compare-card h3{font-size:27px;margin-bottom:10px}.compare-card p{color:#426174}
+.compare-card ul{padding-left:19px;color:#426174}.compare-card li{margin:7px 0}
+
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.workflow:before{content:"";position:absolute;left:9%;right:9%;top:32px;height:3px;background:linear-gradient(90deg,var(--green),var(--blue),var(--bright),var(--navy))}
+.flow{position:relative;text-align:center;padding:0 15px}.flow .n{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;background:#fff;border:3px solid var(--blue);font:700 22px Georgia,serif;position:relative;z-index:2}
+.flow:nth-child(1) .n{border-color:var(--green)}.flow:nth-child(3) .n{border-color:var(--bright)}.flow:nth-child(4) .n{border-color:var(--navy)}
+.flow h3{font-size:22px;margin-bottom:6px}.flow p{font-size:14px;color:var(--muted);margin:0}
+
+.guardrail{background:#0A2033;color:#fff;padding:42px 0;border-top:5px solid var(--green)}
+.guardrail-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:42px;align-items:center}
+.guardrail h2{font-size:38px}.guardrail p{color:#DDEEFF}.guardrail strong{color:#fff}
+.guardrail-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.guardrail-list div{padding:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:13px;font-size:14px}
+
+.final{padding:76px 0;text-align:center;background:#fff}.final h2{font-size:46px}.final p{max-width:720px;margin:16px auto 26px;color:var(--muted)}
+.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){
+ .nav-links a:not([aria-current]):not(.nav-cta){display:none}
+ .hero-grid,.principle,.pathways,.compare,.guardrail-grid{grid-template-columns:1fr}
+ .workflow{grid-template-columns:1fr;gap:18px}.workflow:before{display:none}
+ .guardrail-list{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container nav">
-<a class="brand" href="index.html" aria-label="GARDEN home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">GARDEN</span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-<nav id="primary-nav" class="nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a aria-current="page" href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a></nav>
-</div></header>
-<main id="main">
-<section class="hero"><div class="container hero-grid"><div>
-<div class="eyebrow">Guided AI for Christian learning</div>
-<h1>Use AI with guardrails.</h1>
-<p class="lede">AI can be an extraordinary learning assistant, but it should not become your authority. GARDEN provides two different master frameworks that shape how AI reasons, what theological boundaries it respects, and how it helps you prepare for real human conversations.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#choose">Choose a framework ↓</a><a class="btn btn-secondary" href="research.html">Search the Research Library</a></div>
+<a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a>
+<nav class="nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a><a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a aria-current="page" href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="start-here.html">Begin</a>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><div class="eyebrow">Structured AI use</div><h1>AI Frameworks</h1><p class="lede">Use AI to think more carefully, prepare more thoroughly, and engage more responsibly—without confusing a useful assistant with a source of authority.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#pathways">Choose a pathway ↓</a><a class="btn btn-secondary" href="#principle">See the guiding principle</a></div></div>
+<div class="router">
+<div class="router-top"><strong>What kind of conversation are you preparing for?</strong><span>Choose the framework based on who is across from you.</span></div>
+<div class="routes">
+<div class="route external"><small>Believer → Non-believer</small><h3>External Engagement</h3><p>Analyze objections, assumptions, competing explanations, and ways to respond with clarity and fairness.</p></div>
+<div class="route internal"><small>Believer ↔ Believer</small><h3>Internal Christian Dialogue</h3><p>Reason from Scripture first, map legitimate Christian positions, and distinguish settled orthodoxy from contested questions.</p></div>
 </div>
-<aside class="hero-card"><div class="label">The principle</div><h2>AI is the assistant. It is not the authority.</h2>
-<p>Use AI to clarify, compare, question, and learn. Verify important claims against Scripture and trusted sources, and bring what you learn back into real relationships.</p></aside>
+</div>
 </div></section>
 
-<section class="section alt" id="choose"><div class="container">
-<div class="section-head"><div class="eyebrow">Choose the context</div><h2>What kind of conversation are you preparing for?</h2>
-<p>The two frameworks solve different problems. Select the one that matches the person and question in front of you.</p></div>
-<div class="tool-grid">
-<article class="card tool-card"><div class="tool-kicker">Believer → non-believer</div><h3>External Engagement Framework</h3>
-<p>Use AI to understand objections, steelman competing views, identify worldview assumptions, evaluate explanations, and prepare thoughtful questions or responses for conversations outside Christianity.</p>
-<a href="external-framework.html">Explore the External Framework →</a></article>
-<article class="card tool-card"><div class="tool-kicker">Believer ↔ believer</div><h3>Internal Christian Dialogue Framework</h3>
-<p>Use AI to study doctrine, interpret Scripture carefully, distinguish settled orthodoxy from legitimate secondary disagreement, and engage other Christians with conviction and charity.</p>
-<a href="internal-framework.html">Explore the Internal Framework →</a></article>
-</div></div></section>
+<section class="section" id="principle"><div class="container principle">
+<div class="authority"><div class="eyebrow" style="color:#A9D5FF">The non-negotiable</div><h3>AI is the assistant. It is not the authority.</h3><p>These frameworks are designed to help you <strong>think, research, compare, organize, and prepare</strong>. They do not replace Scripture, careful interpretation, trusted scholarship, prayer, or wise Christian judgment.</p></div>
+<div class="principles">
+<div class="principle-row"><div class="icon">1</div><div><h3>Use AI to slow down thinking.</h3><p>Ask it to clarify claims, identify assumptions, separate issues, and represent opposing views fairly before you respond.</p></div></div>
+<div class="principle-row"><div class="icon">2</div><div><h3>Use AI to prepare, not posture.</h3><p>The goal is not to sound smarter in the next conversation. It is to understand the issue well enough to engage another person honestly and helpfully.</p></div></div>
+<div class="principle-row"><div class="icon">3</div><div><h3>Verify what matters.</h3><p>Important factual, historical, biblical, and theological claims should be checked against reliable sources rather than accepted because an AI produced them.</p></div></div>
+</div>
+</div></section>
 
-<section class="quote-band"><div class="container"><blockquote>Powerful tools are most useful when you know what they are for—and what they are not.</blockquote>
-<p>These frameworks are designed to guide study, not replace Scripture, the local church, pastoral wisdom, or careful human judgment.</p></div></section>
+<section class="section alt" id="pathways"><div class="container">
+<div class="section-head"><div class="eyebrow">Two different tasks</div><h2>Choose the framework that matches the conversation.</h2><p>The External and Internal frameworks share a commitment to careful reasoning, but they are solving different problems and therefore follow different paths.</p></div>
+<div class="pathways">
+<article class="pathway external"><div class="path-head"><small>External Engagement Framework</small><h3>When the conversation is with a non-believer.</h3><p>Use AI to understand an objection or worldview claim before deciding what a useful response might be.</p></div>
+<div class="steps">
+<div class="step"><span>1</span><div><strong>Steelman the objection</strong><small>State the strongest fair version before critiquing it.</small></div></div>
+<div class="step"><span>2</span><div><strong>Diagnose the original claim</strong><small>Clarify what is actually being asserted and what evidence would be relevant.</small></div></div>
+<div class="step"><span>3</span><div><strong>Identify worldview assumptions</strong><small>Surface deeper beliefs about knowledge, morality, reality, science, or human nature.</small></div></div>
+<div class="step"><span>4</span><div><strong>Compare explanations</strong><small>Ask which worldview explains the relevant facts more adequately.</small></div></div>
+<div class="step"><span>5</span><div><strong>Remember the person</strong><small>Do not reduce a relationship to an intellectual problem.</small></div></div>
+</div><div class="path-cta"><a class="btn btn-primary" href="external-framework.html">Open External Framework →</a></div></article>
+
+<article class="pathway internal"><div class="path-head"><small>Internal Christian Dialogue Framework</small><h3>When Christians disagree with one another.</h3><p>Use AI to reason carefully within Christian orthodoxy while keeping Scripture and interpretation at the center.</p></div>
+<div class="steps">
+<div class="step"><span>1</span><div><strong>Classify the issue</strong><small>Is this settled orthodoxy, a bounded Christian disagreement, or a genuinely open question?</small></div></div>
+<div class="step"><span>2</span><div><strong>Begin exegetically</strong><small>Work from the relevant biblical texts before moving to systems or philosophy.</small></div></div>
+<div class="step"><span>3</span><div><strong>Map the positions fairly</strong><small>Represent competing Christian views in terms their advocates would recognize.</small></div></div>
+<div class="step"><span>4</span><div><strong>Locate the real disagreement</strong><small>Identify the hermeneutical, theological, historical, or philosophical hinge points.</small></div></div>
+<div class="step"><span>5</span><div><strong>Assess boundaries and implications</strong><small>Clarify what is orthodox, what is disputed, and what remains unresolved.</small></div></div>
+</div><div class="path-cta"><a class="btn btn-secondary" href="internal-framework.html">Open Internal Framework →</a></div></article>
+</div>
+</div></section>
 
 <section class="section"><div class="container">
-<div class="section-head"><div class="eyebrow">How to use them</div><h2>Attach. Ask. Learn. Verify. Return.</h2></div>
-<div class="flow">
-<div class="flow-step"><div class="dot"></div><h3>Attach</h3><p>Start a new AI conversation and attach the appropriate master framework.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>Ask</h3><p>Enter the real question, objection, passage, doctrine, or statement you want to explore.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>Learn</h3><p>Use the response to deepen your own understanding rather than merely copy an answer.</p></div>
-<div class="flow-step"><div class="dot"></div><h3>Verify & Return</h3><p>Check important claims and bring what you learned back into Scripture, church, and real conversation.</p></div>
-</div></div></section>
+<div class="section-head"><div class="eyebrow">The key distinction</div><h2>External and internal dialogue require different kinds of care.</h2></div>
+<div class="compare">
+<div class="compare-card external"><h3>External: explain and compare worldviews.</h3><p>The question is often whether Christianity makes better sense of reality than the competing explanation.</p><ul><li>Understand the objection before answering it.</li><li>Expose assumptions without caricature.</li><li>Compare explanatory power.</li><li>Choose a response that fits the person and situation.</li></ul></div>
+<div class="compare-card internal"><h3>Internal: interpret faithfully within Christian boundaries.</h3><p>The question is often how Christians who affirm Scripture and historic orthodoxy should understand a disputed issue.</p><ul><li>Exegetically first.</li><li>Theologically second.</li><li>Philosophically third.</li><li>Distinguish essential doctrine from legitimate disagreement.</li></ul></div>
+</div>
+</div></section>
 
-<section class="final-cta"><div class="container"><div class="box"><div class="eyebrow light">The goal</div>
-<h2>Better preparation should lead to better human engagement.</h2>
-<p>Use AI to reduce the pressure of not knowing—not to avoid the people, relationships, churches, and conversations that Christian growth and evangelism actually require.</p>
-<a class="btn btn-light" href="external-framework.html">Start with External Engagement</a>
-</div></div></section>
+<section class="section alt"><div class="container">
+<div class="section-head"><div class="eyebrow">Where this fits in GARDEN</div><h2>AI belongs mainly in the quiet space between conversations.</h2><p>It is especially useful during <strong>Reflect &amp; Research</strong>—after a question arises and before you return to the person with a thoughtful next step.</p></div>
+<div class="workflow">
+<div class="flow"><div class="n">1</div><h3>Conversation</h3><p>A question, objection, or disagreement surfaces.</p></div>
+<div class="flow"><div class="n">2</div><h3>Reflect</h3><p>Clarify what was actually said and what you need to understand.</p></div>
+<div class="flow"><div class="n">3</div><h3>Research</h3><p>Use trusted sources and AI frameworks to prepare carefully.</p></div>
+<div class="flow"><div class="n">4</div><h3>Return</h3><p>Follow up with a question, explanation, or helpful resource.</p></div>
+</div>
+</div></section>
+
+<section class="guardrail"><div class="container guardrail-grid">
+<div><div class="eyebrow" style="color:#9DD0FF">Keep the hierarchy clear</div><h2>Use technology without outsourcing judgment.</h2><p>The framework should make you <strong>more thoughtful and responsible</strong>, not more dependent on whatever an AI happens to produce.</p></div>
+<div class="guardrail-list"><div><strong>Scripture over output.</strong><br>AI does not determine Christian doctrine.</div><div><strong>Sources over confidence.</strong><br>Fluent wording is not evidence.</div><div><strong>People over winning.</strong><br>The human being in front of you matters more than the argument.</div></div>
+</div></section>
+
+<section class="final"><div class="container"><div class="eyebrow">Choose your next workspace</div><h2>What kind of conversation are you preparing for?</h2><p>Open the framework that fits the situation, work through it carefully, then return to the real conversation with greater clarity.</p>
+<a class="btn btn-primary" href="external-framework.html">External Engagement</a> <a class="btn btn-secondary" href="internal-framework.html">Internal Christian Dialogue</a>
+</div></section>
 </main>
-<footer class="site-footer"><div class="container footer-grid"><div><strong>GARDEN</strong><p>A practical toolkit for thoughtful, relational, long-game evangelism.</p></div><div class="footer-links">
-<a href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="about.html">About</a>
-</div></div></footer>
-</body></html>
+
+<footer class="footer"><div class="container"><strong>GARDEN</strong><span>Thoughtful, relational evangelism for the long game.</span></div></footer>
+</body>
+</html>
