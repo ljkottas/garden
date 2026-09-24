@@ -88,6 +88,29 @@ linear-gradient(180deg,#fff 0%,#EEF7FF 100%)}
  .guardrail-list{grid-template-columns:1fr}
 }
 </style>
+<style id="frameworks-responsive-fix">
+@media(max-width:900px){
+  .container{width:min(100% - 32px,1160px)}
+  .hero{padding:48px 0 56px}
+  .hero-grid{gap:32px}
+  .hero h1{font-size:clamp(42px,13vw,62px)}
+  .lede{font-size:18px}
+  .router{padding:16px;border-radius:22px}
+  .router-top{padding:10px 6px 18px}
+  .router-top strong{font-size:clamp(25px,8vw,34px);line-height:1.12}
+  .router-top span{display:block;font-size:16px;line-height:1.45;margin-top:6px}
+  .routes{grid-template-columns:1fr;gap:14px}
+  .route{min-height:0;padding:24px 22px}
+  .route h3{font-size:clamp(28px,9vw,38px);overflow-wrap:anywhere}
+  .route p{max-width:none;font-size:16px}
+}
+@media(max-width:480px){
+  .container{width:calc(100% - 24px)}
+  .hero{padding-top:36px}
+  .router{padding:12px}
+  .route{padding:22px 20px}
+}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container nav">
