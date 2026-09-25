@@ -116,6 +116,30 @@ a{color:inherit}
  .stages,.support{grid-template-columns:1fr}
 }
 </style>
+<style id="garden-wordmark-mobile-fix">
+@media(max-width:900px){
+ .wordmark{grid-template-columns:1fr;gap:12px}
+ .wordmark .letter{
+   height:auto!important;
+   min-height:150px;
+   padding:24px 28px;
+   display:flex;
+   flex-direction:column;
+   align-items:flex-start;
+   justify-content:space-between;
+ }
+ .wordmark .big-letter{font-size:64px}
+ .wordmark .small-name{
+   display:block;
+   width:100%;
+   margin-top:28px;
+   font-size:15px;
+   line-height:1.35;
+   letter-spacing:.05em;
+   overflow-wrap:anywhere;
+ }
+}
+</style>
 </head>
 <body>
 <header class="site-header">
