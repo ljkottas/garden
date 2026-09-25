@@ -117,42 +117,15 @@ a{color:inherit}
 }
 </style>
 <style id="garden-wordmark-mobile-fix">
+.mobile-card-copy{display:none}
 @media(max-width:900px){
- .wordmark{grid-template-columns:1fr;gap:12px}
- .wordmark .letter{
-   height:auto!important;
-   min-height:150px;
-   padding:24px 28px;
-   display:flex;
-   flex-direction:column;
-   align-items:flex-start;
-   justify-content:space-between;
- }
+ .wordmark{grid-template-columns:1fr!important;gap:12px}
+ .wordmark .letter{height:auto!important;min-height:180px;padding:24px 28px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between}
  .wordmark .big-letter{font-size:64px}
- .wordmark .small-name{
-   display:block;
-   width:100%;
-   margin-top:28px;
-   font-size:0;
-   line-height:1.45;
-   letter-spacing:0;
-   text-transform:none;
-   overflow-wrap:normal;
- }
- .wordmark .small-name::before{font-size:17px;font-weight:800;display:block;margin-bottom:5px}
- .wordmark .small-name::after{font-size:16px;font-weight:400;display:block;opacity:.92}
- .wordmark .letter:nth-child(1) .small-name::before{content:"Grow Relationships"}
- .wordmark .letter:nth-child(1) .small-name::after{content:"Begin with people, not arguments."}
- .wordmark .letter:nth-child(2) .small-name::before{content:"Ask Thoughtful Questions"}
- .wordmark .letter:nth-child(2) .small-name::after{content:"Clarify and uncover assumptions."}
- .wordmark .letter:nth-child(3) .small-name::before{content:"Reflect & Research"}
- .wordmark .letter:nth-child(3) .small-name::after{content:"Think carefully before responding."}
- .wordmark .letter:nth-child(4) .small-name::before{content:"Direct to Helpful Resources"}
- .wordmark .letter:nth-child(4) .small-name::after{content:"Share useful voices and materials."}
- .wordmark .letter:nth-child(5) .small-name::before{content:"Engage Over Time"}
- .wordmark .letter:nth-child(5) .small-name::after{content:"Keep the conversation going."}
- .wordmark .letter:nth-child(6) .small-name::before{content:"Nurture Through Prayer"}
- .wordmark .letter:nth-child(6) .small-name::after{content:"Trust God with the growth."}
+ .wordmark .small-name{display:none!important}
+ .mobile-card-copy{display:flex!important;flex-direction:column;align-items:flex-start;width:100%;gap:6px;margin-top:34px}
+ .mobile-card-copy strong{display:block;font-size:18px;line-height:1.25;letter-spacing:0;text-transform:none}
+ .mobile-card-copy span{display:block;font-size:16px;line-height:1.45;font-weight:400;letter-spacing:0;text-transform:none;opacity:.92}
 }
 </style>
 </head>
@@ -179,12 +152,12 @@ a{color:inherit}
    <div class="hero-actions"><a class="btn btn-primary" href="#framework">Explore the six habits ↓</a><a class="btn btn-secondary" href="start-here.html">See how to begin</a></div>
   </div>
   <div class="wordmark" aria-label="GARDEN framework at a glance">
-   <div class="letter"><span class="big-letter">G</span><span class="small-name">Grow</span></div>
-   <div class="letter"><span class="big-letter">A</span><span class="small-name">Ask</span></div>
-   <div class="letter"><span class="big-letter">R</span><span class="small-name">Reflect</span></div>
-   <div class="letter"><span class="big-letter">D</span><span class="small-name">Direct</span></div>
-   <div class="letter"><span class="big-letter">E</span><span class="small-name">Engage</span></div>
-   <div class="letter"><span class="big-letter">N</span><span class="small-name">Nurture</span></div>
+   <div class="letter"><span class="big-letter">G</span><span class="small-name">Grow</span><div class="mobile-card-copy"><strong>Grow Relationships</strong><span>Begin with people, not arguments.</span></div></div>
+   <div class="letter"><span class="big-letter">A</span><span class="small-name">Ask</span><div class="mobile-card-copy"><strong>Ask Thoughtful Questions</strong><span>Clarify and uncover assumptions.</span></div></div>
+   <div class="letter"><span class="big-letter">R</span><span class="small-name">Reflect</span><div class="mobile-card-copy"><strong>Reflect &amp; Research</strong><span>Think carefully before responding.</span></div></div>
+   <div class="letter"><span class="big-letter">D</span><span class="small-name">Direct</span><div class="mobile-card-copy"><strong>Direct to Helpful Resources</strong><span>Share useful voices and materials.</span></div></div>
+   <div class="letter"><span class="big-letter">E</span><span class="small-name">Engage</span><div class="mobile-card-copy"><strong>Engage Over Time</strong><span>Keep the conversation going.</span></div></div>
+   <div class="letter"><span class="big-letter">N</span><span class="small-name">Nurture</span><div class="mobile-card-copy"><strong>Nurture Through Prayer</strong><span>Trust God with the growth.</span></div></div>
   </div>
  </div>
 </section>
