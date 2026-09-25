@@ -27,6 +27,35 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin:0}a
 .final{padding:76px 0;text-align:center;background:linear-gradient(135deg,#102A43 0%,#1565C0 72%,#2D8CFF 140%);color:#fff;border-top:5px solid var(--green)}.final h2{font-size:48px}.final p{max-width:700px;margin:17px auto 26px;color:#E6F3FF}.footer{padding:32px 0;background:#0A2033;color:#DDEEFF}.footer .container{display:flex;justify-content:space-between;gap:20px}
 @media(max-width:900px){.nav-links a:not([aria-current]):not(.nav-cta){display:none}.hero-grid,.start-band .container,.week,.not-goal{grid-template-columns:1fr}.path:before{left:32px}.path-row{grid-template-columns:66px 1fr}.path-marker{grid-column:1!important}.path-content,.path-row:nth-child(even) .path-content{grid-column:2}.path-space{display:none}}
 </style>
+<style id="start-here-timeline-mobile-fix">
+@media(max-width:900px){
+ .path{gap:24px}
+ .path:before{left:32px;top:33px;bottom:33px}
+ .path-row{
+   grid-template-columns:66px minmax(0,1fr);
+   gap:20px;
+   align-items:start;
+ }
+ .path-marker{
+   grid-column:1!important;
+   grid-row:1;
+   margin:18px auto 0;
+   align-self:start;
+ }
+ .path-content,
+ .path-row:nth-child(even) .path-content{
+   grid-column:2;
+   grid-row:1;
+   width:100%;
+ }
+}
+@media(max-width:520px){
+ .path-row{grid-template-columns:58px minmax(0,1fr);gap:14px}
+ .path:before{left:28px}
+ .path-marker{width:56px;height:56px;margin-top:18px;box-shadow:0 0 0 6px #F1F7FC}
+ .path-content{padding:22px 20px}
+}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a><nav class="nav-links"><a href="index.html">Home</a><a aria-current="page" href="start-here.html">Start Here</a><a href="garden.html">GARDEN</a><a href="people.html">Your People</a><a href="conversations.html">Conversations</a><a href="resources.html">Trusted Voices</a><a href="research.html">Research Library</a><a href="frameworks.html">AI Frameworks</a><a href="about.html">About</a><a class="nav-cta" href="#path">Begin</a></nav></div></header>
