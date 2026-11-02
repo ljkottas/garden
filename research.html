@@ -134,6 +134,13 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
 .search-demo .query-tags button{padding:7px 10px;border:0;border-radius:999px;background:#E7F2FB;color:#29526A;font:inherit;font-size:12px;font-weight:750;cursor:pointer}
 .search-demo .query-tags button:focus-visible{outline:2px solid #1565C0;outline-offset:2px}
 @media(max-width:680px){.search-demo .bar{min-width:0}.search-demo .bar input{font-size:16px;touch-action:manipulation}}
+</style><style id="research-one-search-clarity">
+.search-demo .bar{gap:10px}
+.search-demo .bar #heroSearchGo{flex:0 0 auto;border:0;background:#1565C0;color:white;border-radius:9px;padding:12px 15px;font:700 14px system-ui,sans-serif;cursor:pointer}
+.search-demo .bar #heroSearchGo:focus-visible{outline:3px solid #2E7D55;outline-offset:2px}
+.research-search-help strong{font-size:17px}.research-search-help p{margin:5px 0 8px;color:#526A7A}.research-search-help a{font-weight:750;color:#1565C0}
+#resultsHeading{scroll-margin-top:100px}
+@media(max-width:680px){.search-demo .bar{padding:9px;gap:7px}.search-demo .bar input{font-size:16px}.search-demo .bar #heroSearchGo{padding:11px 12px}}
 </style></head>
 <body>
 <header class="site-header"><div class="container nav">
@@ -146,7 +153,7 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
 <section class="hero"><div class="container hero-grid">
 <div><div class="eyebrow">GARDEN research workspace</div><h1>Research Library</h1><p class="lede">Find trusted material by the question, objection, or topic that actually came up in conversation. Search broadly, narrow quickly, and choose one useful next step.</p>
 <div class="stats"><div class="stat"><strong>143</strong><span>Topics</span></div><div class="stat"><strong>763</strong><span>Curated links</span></div><div class="stat"><strong>4</strong><span>Resource types</span></div></div></div>
-<div class="search-demo"><label for="heroResearchSearch" class="hero-search-label">Search the Research Library</label><div class="bar"><span class="glass" aria-hidden="true">⌕</span><input id="heroResearchSearch" type="search" placeholder="Try: Bible changed" autocomplete="off" aria-label="Search the Research Library"></div><small>Search the way someone actually phrased the question.</small><div class="query-tags"><button type="button" data-hero-query="science disproves God">science disproves God</button><button type="button" data-hero-query="objective morality">objective morality</button><button type="button" data-hero-query="suffering">suffering</button><button type="button" data-hero-query="resurrection">resurrection</button></div></div>
+<div class="search-demo"><label for="heroResearchSearch" class="hero-search-label">Search the Research Library</label><div class="bar"><span class="glass" aria-hidden="true">⌕</span><input id="heroResearchSearch" type="search" placeholder="Type your question here..." autocomplete="off" aria-label="Search the Research Library"><button id="heroSearchGo" type="button">Search</button></div><small>Type a question above and tap Search, or choose an example below.</small><div class="query-tags"><button type="button" data-hero-query="science disproves God">science disproves God</button><button type="button" data-hero-query="objective morality">objective morality</button><button type="button" data-hero-query="suffering">suffering</button><button type="button" data-hero-query="resurrection">resurrection</button></div></div>
 </div></section>
 
 <div class="container library-shell">
@@ -171,7 +178,7 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
 </aside>
 
 <section class="workspace">
-<div class="search-panel"><label class="research-search-wrap"><span>Search by question, objection, author, or topic</span><input id="researchSearch" type="search" placeholder="Try: Bible changed, suffering, morality, science..." autocomplete="off"></label></div>
+<div class="search-panel research-search-help"><strong>Search results</strong><p>Use the search box at the top of this page to find a question, topic, or author. Refine your results using the filters.</p><a href="#heroResearchSearch">Back to search ↑</a></div>
 <div class="results-head"><div><div class="eyebrow">Browse & search</div><h2 id="resultsHeading">All topics</h2></div><p id="resultsCount" class="research-count"></p></div>
 <div id="researchResults" class="research-topic-grid"></div>
 <div id="researchEmpty" class="research-empty" hidden><h3>No matching topics yet.</h3><p>Try fewer words, a broader category, or a different resource type.</p></div>
@@ -184,7 +191,7 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
 <script>
 (function() {
  const topics=JSON.parse(document.getElementById('researchData').textContent);
- const search=document.getElementById('researchSearch');
+ const search=document.getElementById('heroResearchSearch');
  const results=document.getElementById('researchResults');
  const count=document.getElementById('resultsCount');
  const heading=document.getElementById('resultsHeading');
@@ -224,12 +231,11 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
       btn.remove();
    }));
  }
- const heroSearch=document.getElementById('heroResearchSearch');
- const syncSearch=(value,scroll=false)=>{search.value=value;heroSearch.value=value;render();if(scroll)document.querySelector('.workspace').scrollIntoView({behavior:'smooth',block:'start'});};
- heroSearch.addEventListener('input',()=>syncSearch(heroSearch.value));
- search.addEventListener('input',()=>{heroSearch.value=search.value;render();});
- heroSearch.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();syncSearch(heroSearch.value,true);heroSearch.blur();}});
- document.querySelectorAll('[data-hero-query]').forEach(b=>b.addEventListener('click',()=>syncSearch(b.dataset.heroQuery,true)));
+ const showResults=()=>document.getElementById('resultsHeading').scrollIntoView({behavior:'smooth',block:'start'});
+ search.addEventListener('input',render);
+ search.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render();showResults();search.blur();}});
+ document.getElementById('heroSearchGo').addEventListener('click',()=>{render();showResults();search.blur();});
+ document.querySelectorAll('[data-hero-query]').forEach(b=>b.addEventListener('click',()=>{search.value=b.dataset.heroQuery;render();showResults();}));
  document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.category;document.querySelectorAll('[data-category]').forEach(x=>x.classList.toggle('active',x===b));render();}));
  document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{type=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.classList.toggle('active',x===b));render();}));
  render();
