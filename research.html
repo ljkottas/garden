@@ -108,7 +108,25 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
  }
 }
 </style>
-</head>
+<style id="research-mobile-viewport-input-fix">
+@media(max-width:680px){
+ html,body{max-width:100%;overflow-x:clip}
+ .hero-grid,.hero-grid>*,.library-shell,.library-shell>*,.workspace,.search-panel{min-width:0;max-width:100%}
+ .hero{padding:42px 0 40px}
+ .hero h1{font-size:clamp(38px,10.5vw,52px);overflow-wrap:break-word}
+ .hero .lede{font-size:17px;overflow-wrap:break-word}
+ .stats{gap:16px}
+ .stat strong{font-size:25px}
+ .stat span{font-size:10px;letter-spacing:.04em}
+ .search-demo{padding:16px}
+ .search-demo .bar{min-width:0;overflow-wrap:anywhere}
+ .search-panel{padding:15px}
+ .research-search-wrap{display:block;min-width:0}
+ #researchSearch{display:block;position:relative;z-index:1;box-sizing:border-box;width:100%;min-width:0;max-width:100%;font-size:16px;line-height:1.4;-webkit-appearance:none;appearance:none;pointer-events:auto;touch-action:manipulation;user-select:text;-webkit-user-select:text}
+ .results-head{flex-wrap:wrap}
+ .results-head h2{overflow-wrap:anywhere}
+}
+</style></head>
 <body>
 <header class="site-header"><div class="container nav">
 <a class="brand" href="index.html"><span class="brand-mark"></span>GARDEN</a>
