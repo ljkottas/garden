@@ -166,9 +166,20 @@ a{color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
  let category='All', type='All';
  const esc=s=>s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
  function searchable(t) { return [t.title,t.category,...t.resources.flatMap(r=>[r.author,r.title,r.type])].join(' ').toLowerCase(); }
+ // Match natural-language questions by individual meaningful words, not only exact phrases.
+ // Common wording variants also help visitors find biblical transmission topics.
+ const aliases={changed:['textual','manuscript','transmission','errors','reliability','altered'],change:['textual','manuscript','transmission','errors'],bible:['biblical','scripture','testament'],reliable:['reliability','trustworthy','accurate'],contradictions:['errors','inerrancy']};
+ function matchesQuery(t,q){
+   if(!q)return true;
+   const hay=searchable(t);
+   if(hay.includes(q))return true;
+   const words=q.split(/[^a-z0-9]+/).filter(w=>w.length>1&&!['the','and','for','was','are','has','have','did','does','can','why','how','what','with','from','about'].includes(w));
+   if(!words.length)return true;
+   return words.every(w=>hay.includes(w)||(aliases[w]||[]).some(a=>hay.includes(a)));
+ }
  function render() {
    const q=search.value.trim().toLowerCase();
-   const filtered=topics.filter(t=> (category==='All'||t.category===category) && (!q||searchable(t).includes(q)) && (type==='All'||t.resources.some(r=>r.type===type)) );
+   const filtered=topics.filter(t=> (category==='All'||t.category===category) && matchesQuery(t,q) && (type==='All'||t.resources.some(r=>r.type===type)) );
    heading.textContent=q ? `Results for “${search.value.trim()}”` : (category==='All' ? 'All topics' : category);
    count.textContent=`${filtered.length} topic${filtered.length===1?'':'s'} shown`;
    empty.hidden=filtered.length!==0;
